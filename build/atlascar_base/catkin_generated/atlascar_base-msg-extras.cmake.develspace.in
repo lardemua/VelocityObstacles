@@ -1,2 +1,0 @@
-set(atlascar_base_MESSAGE_FILES "/home/ruic7/MTT/src/atlascar_base/msg/GearboxCommand.msg;/home/ruic7/MTT/src/atlascar_base/msg/ManagerCommand.msg;/home/ruic7/MTT/src/atlascar_base/msg/PlcCommand.msg;/home/ruic7/MTT/src/atlascar_base/msg/ThrottleCommand.msg;/home/ruic7/MTT/src/atlascar_base/msg/GearboxStatus.msg;/home/ruic7/MTT/src/atlascar_base/msg/ManagerStatus.msg;/home/ruic7/MTT/src/atlascar_base/msg/PlcStatus.msg;/home/ruic7/MTT/src/atlascar_base/msg/ThrottleStatus.msg")
-set(atlascar_base_SERVICE_FILES "")

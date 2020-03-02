@@ -132,12 +132,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ruic7/MTT/build/gtest/cmake_install.cmake")
   include("/home/ruic7/MTT/build/colormap/cmake_install.cmake")
-  include("/home/ruic7/MTT/build/kfilter/cmake_install.cmake")
-  include("/home/ruic7/MTT/build/tcp_client/cmake_install.cmake")
-  include("/home/ruic7/MTT/build/human_driver_monitor/cmake_install.cmake")
-  include("/home/ruic7/MTT/build/topic_priority/cmake_install.cmake")
-  include("/home/ruic7/MTT/build/sensors/odometer/cmake_install.cmake")
-  include("/home/ruic7/MTT/build/atlascar_base/cmake_install.cmake")
   include("/home/ruic7/MTT/build/mtt/cmake_install.cmake")
 
 endif()

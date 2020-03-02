@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/ruic7/MTT/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/ruic7/MTT/build"

@@ -23,10 +23,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/ruic7/MTT/devel/include"
-  "/home/ruic7/MTT/src/atlascar_base/include"
-  "/home/ruic7/MTT/src/tcp_client/include"
-  "/home/ruic7/MTT/src/topic_priority/include"
-  "/home/ruic7/MTT/src/kfilter/include"
   "/home/ruic7/MTT/src/colormap/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
@@ -52,8 +48,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ruic7/MTT/build/tcp_client/CMakeFiles/tcp_client.dir/DependInfo.cmake"
-  "/home/ruic7/MTT/build/kfilter/CMakeFiles/kfilter.dir/DependInfo.cmake"
   "/home/ruic7/MTT/build/colormap/CMakeFiles/colormap.dir/DependInfo.cmake"
   )
 

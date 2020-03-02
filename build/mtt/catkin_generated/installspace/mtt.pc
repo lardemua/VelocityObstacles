@@ -5,4 +5,4 @@ Description: Description of mtt
 Version: 0.0.0
 Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
-Requires: kfilter colormap pcl_ros
+Requires: pcl_ros
