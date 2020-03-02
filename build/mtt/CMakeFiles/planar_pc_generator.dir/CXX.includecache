@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/src/mtt/src/planar_pc_generator.cpp
+/home/ruic7/MTT/src/mtt/src/planar_pc_generator.cpp
 stdio.h
 -
 ros/ros.h

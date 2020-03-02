@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ruic7/mymtt/src/kfilter/samples/KMatrix/kmatrix.cpp" "/home/ruic7/mymtt/build/kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.o"
+  "/home/ruic7/MTT/src/kfilter/samples/KMatrix/kmatrix.cpp" "/home/ruic7/MTT/build/kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,12 +20,12 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/ruic7/mymtt/src/kfilter/include"
+  "/home/ruic7/MTT/src/kfilter/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ruic7/mymtt/build/kfilter/CMakeFiles/kfilter.dir/DependInfo.cmake"
+  "/home/ruic7/MTT/build/kfilter/CMakeFiles/kfilter.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,4 +1,4 @@
-prefix=/home/ruic7/mymtt/install
+prefix=/home/ruic7/MTT/install
 
 Name: human_driver_monitor
 Description: Description of human_driver_monitor

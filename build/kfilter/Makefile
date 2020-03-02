@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruic7/mymtt/src
+CMAKE_SOURCE_DIR = /home/ruic7/MTT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
+CMAKE_BINARY_DIR = /home/ruic7/MTT/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/mymtt/build/CMakeFiles /home/ruic7/mymtt/build/kfilter/CMakeFiles/progress.marks
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/mymtt/build/CMakeFiles 0
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles /home/ruic7/MTT/build/kfilter/CMakeFiles/progress.marks
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/clean
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/preinstall
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/preinstall
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 kfilter/CMakeFiles/kfilter.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/kfilter.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/kfilter.dir/rule
 .PHONY : kfilter/CMakeFiles/kfilter.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ kfilter: kfilter/CMakeFiles/kfilter.dir/rule
 
 # fast build rule for target.
 kfilter/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/build
 .PHONY : kfilter/fast
 
 # Convenience name for target.
 kfilter/CMakeFiles/Example.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/Example.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/Example.dir/rule
 .PHONY : kfilter/CMakeFiles/Example.dir/rule
 
 # Convenience name for target.
@@ -194,12 +194,12 @@ Example: kfilter/CMakeFiles/Example.dir/rule
 
 # fast build rule for target.
 Example/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/build
 .PHONY : Example/fast
 
 # Convenience name for target.
 kfilter/CMakeFiles/EKFilter.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/EKFilter.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/EKFilter.dir/rule
 .PHONY : kfilter/CMakeFiles/EKFilter.dir/rule
 
 # Convenience name for target.
@@ -209,12 +209,12 @@ EKFilter: kfilter/CMakeFiles/EKFilter.dir/rule
 
 # fast build rule for target.
 EKFilter/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/build
 .PHONY : EKFilter/fast
 
 # Convenience name for target.
 kfilter/CMakeFiles/KMatrix.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/KMatrix.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/KMatrix.dir/rule
 .PHONY : kfilter/CMakeFiles/KMatrix.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ KMatrix: kfilter/CMakeFiles/KMatrix.dir/rule
 
 # fast build rule for target.
 KMatrix/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/build
 .PHONY : KMatrix/fast
 
 # Convenience name for target.
 kfilter/CMakeFiles/KVector.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/KVector.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 kfilter/CMakeFiles/KVector.dir/rule
 .PHONY : kfilter/CMakeFiles/KVector.dir/rule
 
 # Convenience name for target.
@@ -239,7 +239,7 @@ KVector: kfilter/CMakeFiles/KVector.dir/rule
 
 # fast build rule for target.
 KVector/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/build
 .PHONY : KVector/fast
 
 samples/EKFilter/ekfilter.o: samples/EKFilter/ekfilter.cpp.o
@@ -248,7 +248,7 @@ samples/EKFilter/ekfilter.o: samples/EKFilter/ekfilter.cpp.o
 
 # target to build an object file
 samples/EKFilter/ekfilter.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/samples/EKFilter/ekfilter.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/samples/EKFilter/ekfilter.cpp.o
 .PHONY : samples/EKFilter/ekfilter.cpp.o
 
 samples/EKFilter/ekfilter.i: samples/EKFilter/ekfilter.cpp.i
@@ -257,7 +257,7 @@ samples/EKFilter/ekfilter.i: samples/EKFilter/ekfilter.cpp.i
 
 # target to preprocess a source file
 samples/EKFilter/ekfilter.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/samples/EKFilter/ekfilter.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/samples/EKFilter/ekfilter.cpp.i
 .PHONY : samples/EKFilter/ekfilter.cpp.i
 
 samples/EKFilter/ekfilter.s: samples/EKFilter/ekfilter.cpp.s
@@ -266,7 +266,7 @@ samples/EKFilter/ekfilter.s: samples/EKFilter/ekfilter.cpp.s
 
 # target to generate assembly for a file
 samples/EKFilter/ekfilter.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/samples/EKFilter/ekfilter.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/EKFilter.dir/build.make kfilter/CMakeFiles/EKFilter.dir/samples/EKFilter/ekfilter.cpp.s
 .PHONY : samples/EKFilter/ekfilter.cpp.s
 
 samples/Example/example.o: samples/Example/example.cpp.o
@@ -275,7 +275,7 @@ samples/Example/example.o: samples/Example/example.cpp.o
 
 # target to build an object file
 samples/Example/example.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/example.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/example.cpp.o
 .PHONY : samples/Example/example.cpp.o
 
 samples/Example/example.i: samples/Example/example.cpp.i
@@ -284,7 +284,7 @@ samples/Example/example.i: samples/Example/example.cpp.i
 
 # target to preprocess a source file
 samples/Example/example.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/example.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/example.cpp.i
 .PHONY : samples/Example/example.cpp.i
 
 samples/Example/example.s: samples/Example/example.cpp.s
@@ -293,7 +293,7 @@ samples/Example/example.s: samples/Example/example.cpp.s
 
 # target to generate assembly for a file
 samples/Example/example.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/example.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/example.cpp.s
 .PHONY : samples/Example/example.cpp.s
 
 samples/Example/plane.o: samples/Example/plane.cpp.o
@@ -302,7 +302,7 @@ samples/Example/plane.o: samples/Example/plane.cpp.o
 
 # target to build an object file
 samples/Example/plane.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/plane.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/plane.cpp.o
 .PHONY : samples/Example/plane.cpp.o
 
 samples/Example/plane.i: samples/Example/plane.cpp.i
@@ -311,7 +311,7 @@ samples/Example/plane.i: samples/Example/plane.cpp.i
 
 # target to preprocess a source file
 samples/Example/plane.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/plane.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/plane.cpp.i
 .PHONY : samples/Example/plane.cpp.i
 
 samples/Example/plane.s: samples/Example/plane.cpp.s
@@ -320,7 +320,7 @@ samples/Example/plane.s: samples/Example/plane.cpp.s
 
 # target to generate assembly for a file
 samples/Example/plane.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/plane.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/plane.cpp.s
 .PHONY : samples/Example/plane.cpp.s
 
 samples/Example/simple_plane.o: samples/Example/simple_plane.cpp.o
@@ -329,7 +329,7 @@ samples/Example/simple_plane.o: samples/Example/simple_plane.cpp.o
 
 # target to build an object file
 samples/Example/simple_plane.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/simple_plane.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/simple_plane.cpp.o
 .PHONY : samples/Example/simple_plane.cpp.o
 
 samples/Example/simple_plane.i: samples/Example/simple_plane.cpp.i
@@ -338,7 +338,7 @@ samples/Example/simple_plane.i: samples/Example/simple_plane.cpp.i
 
 # target to preprocess a source file
 samples/Example/simple_plane.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/simple_plane.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/simple_plane.cpp.i
 .PHONY : samples/Example/simple_plane.cpp.i
 
 samples/Example/simple_plane.s: samples/Example/simple_plane.cpp.s
@@ -347,7 +347,7 @@ samples/Example/simple_plane.s: samples/Example/simple_plane.cpp.s
 
 # target to generate assembly for a file
 samples/Example/simple_plane.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/simple_plane.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/Example.dir/build.make kfilter/CMakeFiles/Example.dir/samples/Example/simple_plane.cpp.s
 .PHONY : samples/Example/simple_plane.cpp.s
 
 samples/KMatrix/kmatrix.o: samples/KMatrix/kmatrix.cpp.o
@@ -356,7 +356,7 @@ samples/KMatrix/kmatrix.o: samples/KMatrix/kmatrix.cpp.o
 
 # target to build an object file
 samples/KMatrix/kmatrix.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.o
 .PHONY : samples/KMatrix/kmatrix.cpp.o
 
 samples/KMatrix/kmatrix.i: samples/KMatrix/kmatrix.cpp.i
@@ -365,7 +365,7 @@ samples/KMatrix/kmatrix.i: samples/KMatrix/kmatrix.cpp.i
 
 # target to preprocess a source file
 samples/KMatrix/kmatrix.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.i
 .PHONY : samples/KMatrix/kmatrix.cpp.i
 
 samples/KMatrix/kmatrix.s: samples/KMatrix/kmatrix.cpp.s
@@ -374,7 +374,7 @@ samples/KMatrix/kmatrix.s: samples/KMatrix/kmatrix.cpp.s
 
 # target to generate assembly for a file
 samples/KMatrix/kmatrix.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KMatrix.dir/build.make kfilter/CMakeFiles/KMatrix.dir/samples/KMatrix/kmatrix.cpp.s
 .PHONY : samples/KMatrix/kmatrix.cpp.s
 
 samples/KVector/kvector.o: samples/KVector/kvector.cpp.o
@@ -383,7 +383,7 @@ samples/KVector/kvector.o: samples/KVector/kvector.cpp.o
 
 # target to build an object file
 samples/KVector/kvector.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/samples/KVector/kvector.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/samples/KVector/kvector.cpp.o
 .PHONY : samples/KVector/kvector.cpp.o
 
 samples/KVector/kvector.i: samples/KVector/kvector.cpp.i
@@ -392,7 +392,7 @@ samples/KVector/kvector.i: samples/KVector/kvector.cpp.i
 
 # target to preprocess a source file
 samples/KVector/kvector.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/samples/KVector/kvector.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/samples/KVector/kvector.cpp.i
 .PHONY : samples/KVector/kvector.cpp.i
 
 samples/KVector/kvector.s: samples/KVector/kvector.cpp.s
@@ -401,7 +401,7 @@ samples/KVector/kvector.s: samples/KVector/kvector.cpp.s
 
 # target to generate assembly for a file
 samples/KVector/kvector.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/samples/KVector/kvector.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/KVector.dir/build.make kfilter/CMakeFiles/KVector.dir/samples/KVector/kvector.cpp.s
 .PHONY : samples/KVector/kvector.cpp.s
 
 src/kstatics.o: src/kstatics.cpp.o
@@ -410,7 +410,7 @@ src/kstatics.o: src/kstatics.cpp.o
 
 # target to build an object file
 src/kstatics.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/src/kstatics.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/src/kstatics.cpp.o
 .PHONY : src/kstatics.cpp.o
 
 src/kstatics.i: src/kstatics.cpp.i
@@ -419,7 +419,7 @@ src/kstatics.i: src/kstatics.cpp.i
 
 # target to preprocess a source file
 src/kstatics.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/src/kstatics.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/src/kstatics.cpp.i
 .PHONY : src/kstatics.cpp.i
 
 src/kstatics.s: src/kstatics.cpp.s
@@ -428,7 +428,7 @@ src/kstatics.s: src/kstatics.cpp.s
 
 # target to generate assembly for a file
 src/kstatics.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/src/kstatics.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f kfilter/CMakeFiles/kfilter.dir/build.make kfilter/CMakeFiles/kfilter.dir/src/kstatics.cpp.s
 .PHONY : src/kstatics.cpp.s
 
 # Help Target
@@ -481,6 +481,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

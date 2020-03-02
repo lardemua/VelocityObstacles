@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/devel/include/atlascar_base/GearboxCommand.h
+/home/ruic7/MTT/devel/include/atlascar_base/GearboxCommand.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/ruic7/mymtt/devel/include/atlascar_base/GearboxStatus.h
+/home/ruic7/MTT/devel/include/atlascar_base/GearboxStatus.h
 string
 -
 vector
@@ -42,11 +42,11 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/ruic7/mymtt/src/atlascar_base/src/gearbox.cpp
+/home/ruic7/MTT/src/atlascar_base/src/gearbox.cpp
 gearbox.h
-/home/ruic7/mymtt/src/atlascar_base/src/gearbox.h
+/home/ruic7/MTT/src/atlascar_base/src/gearbox.h
 
-/home/ruic7/mymtt/src/atlascar_base/src/gearbox.h
+/home/ruic7/MTT/src/atlascar_base/src/gearbox.h
 ros/ros.h
 -
 iostream
@@ -66,11 +66,11 @@ diagnostic_updater/diagnostic_updater.h
 diagnostic_updater/publisher.h
 -
 
-/home/ruic7/mymtt/src/atlascar_base/src/gearbox_node.cpp
+/home/ruic7/MTT/src/atlascar_base/src/gearbox_node.cpp
 gearbox.h
-/home/ruic7/mymtt/src/atlascar_base/src/gearbox.h
+/home/ruic7/MTT/src/atlascar_base/src/gearbox.h
 
-/home/ruic7/mymtt/src/tcp_client/include/tcp_client/class_tcp.h
+/home/ruic7/MTT/src/tcp_client/include/tcp_client/class_tcp.h
 sys/socket.h
 -
 netinet/in.h
@@ -92,7 +92,7 @@ errno.h
 iostream
 -
 
-/home/ruic7/mymtt/src/topic_priority/include/topic_priority/topic_priority.h
+/home/ruic7/MTT/src/topic_priority/include/topic_priority/topic_priority.h
 ros/ros.h
 -
 

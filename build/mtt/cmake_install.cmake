@@ -1,8 +1,8 @@
-# Install script for directory: /home/ruic7/mymtt/src/mtt
+# Install script for directory: /home/ruic7/MTT/src/mtt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ruic7/mymtt/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ruic7/MTT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,56 +39,56 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt/msg" TYPE FILE FILES
-    "/home/ruic7/mymtt/src/mtt/msg/Target.msg"
-    "/home/ruic7/mymtt/src/mtt/msg/TargetList.msg"
-    "/home/ruic7/mymtt/src/mtt/msg/TargetListPC.msg"
+    "/home/ruic7/MTT/src/mtt/msg/Target.msg"
+    "/home/ruic7/MTT/src/mtt/msg/TargetList.msg"
+    "/home/ruic7/MTT/src/mtt/msg/TargetListPC.msg"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt/cmake" TYPE FILE FILES "/home/ruic7/mymtt/build/mtt/catkin_generated/installspace/mtt-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt/cmake" TYPE FILE FILES "/home/ruic7/MTT/build/mtt/catkin_generated/installspace/mtt-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/include/mtt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/include/mtt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/share/roseus/ros/mtt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/share/roseus/ros/mtt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/share/common-lisp/ros/mtt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/share/common-lisp/ros/mtt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/share/gennodejs/ros/mtt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/share/gennodejs/ros/mtt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/ruic7/mymtt/devel/lib/python2.7/dist-packages/mtt")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/ruic7/MTT/devel/lib/python2.7/dist-packages/mtt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/lib/python2.7/dist-packages/mtt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/lib/python2.7/dist-packages/mtt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/mymtt/build/mtt/catkin_generated/installspace/mtt.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/MTT/build/mtt/catkin_generated/installspace/mtt.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt/cmake" TYPE FILE FILES "/home/ruic7/mymtt/build/mtt/catkin_generated/installspace/mtt-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt/cmake" TYPE FILE FILES "/home/ruic7/MTT/build/mtt/catkin_generated/installspace/mtt-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt/cmake" TYPE FILE FILES
-    "/home/ruic7/mymtt/build/mtt/catkin_generated/installspace/mttConfig.cmake"
-    "/home/ruic7/mymtt/build/mtt/catkin_generated/installspace/mttConfig-version.cmake"
+    "/home/ruic7/MTT/build/mtt/catkin_generated/installspace/mttConfig.cmake"
+    "/home/ruic7/MTT/build/mtt/catkin_generated/installspace/mttConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt" TYPE FILE FILES "/home/ruic7/mymtt/src/mtt/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtt" TYPE FILE FILES "/home/ruic7/MTT/src/mtt/package.xml")
 endif()
 

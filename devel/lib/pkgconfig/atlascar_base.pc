@@ -1,8 +1,8 @@
-prefix=/home/ruic7/mymtt/devel
+prefix=/home/ruic7/MTT/devel
 
 Name: atlascar_base
 Description: Description of atlascar_base
 Version: 0.0.0
-Cflags: -I/home/ruic7/mymtt/devel/include -I/home/ruic7/mymtt/src/atlascar_base/include
+Cflags: -I/home/ruic7/MTT/devel/include -I/home/ruic7/MTT/src/atlascar_base/include
 Libs: -L${prefix}/lib 
 Requires: roscpp std_msgs message_runtime tcp_client topic_priority human_driver_monitor pcl_ros interactive_markers kfilter

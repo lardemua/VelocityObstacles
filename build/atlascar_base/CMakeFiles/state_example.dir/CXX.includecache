@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/src/atlascar_base/src/state_example.cpp
+/home/ruic7/MTT/src/atlascar_base/src/state_example.cpp
 state_example.h
-/home/ruic7/mymtt/src/atlascar_base/src/state_example.h
+/home/ruic7/MTT/src/atlascar_base/src/state_example.h
 string
 -
 ros/ros.h
@@ -18,7 +18,7 @@ sensor_msgs/JointState.h
 tf/transform_broadcaster.h
 -
 
-/home/ruic7/mymtt/src/atlascar_base/src/state_example.h
+/home/ruic7/MTT/src/atlascar_base/src/state_example.h
 ros/ros.h
 -
 tf/transform_broadcaster.h

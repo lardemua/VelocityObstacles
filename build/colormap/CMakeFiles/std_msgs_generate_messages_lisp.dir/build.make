@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruic7/mymtt/src
+CMAKE_SOURCE_DIR = /home/ruic7/MTT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
+CMAKE_BINARY_DIR = /home/ruic7/MTT/build
 
 # Utility rule file for std_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/build: std_msgs_generate
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 
 colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
-	cd /home/ruic7/mymtt/build/colormap && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/ruic7/MTT/build/colormap && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 
 colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/mymtt/src /home/ruic7/mymtt/src/colormap /home/ruic7/mymtt/build /home/ruic7/mymtt/build/colormap /home/ruic7/mymtt/build/colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/MTT/src /home/ruic7/MTT/src/colormap /home/ruic7/MTT/build /home/ruic7/MTT/build/colormap /home/ruic7/MTT/build/colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
 

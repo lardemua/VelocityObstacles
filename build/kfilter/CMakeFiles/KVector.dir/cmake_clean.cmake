@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/KVector.dir/samples/KVector/kvector.cpp.o"
-  "/home/ruic7/mymtt/devel/lib/kfilter/KVector.pdb"
-  "/home/ruic7/mymtt/devel/lib/kfilter/KVector"
+  "/home/ruic7/MTT/devel/lib/kfilter/KVector.pdb"
+  "/home/ruic7/MTT/devel/lib/kfilter/KVector"
 )
 
 # Per-language clean rules from dependency scanning.

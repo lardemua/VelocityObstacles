@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/human_driver_monitor_generate_messages_cpp"
-  "/home/ruic7/mymtt/devel/include/human_driver_monitor/HumanDriverMonitorStatus.h"
+  "/home/ruic7/MTT/devel/include/human_driver_monitor/HumanDriverMonitorStatus.h"
 )
 
 # Per-language clean rules from dependency scanning.

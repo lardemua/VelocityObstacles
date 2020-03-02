@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ruic7/mymtt/src/colormap/src/colormap.cpp" "/home/ruic7/mymtt/build/colormap/CMakeFiles/colormap.dir/src/colormap.cpp.o"
+  "/home/ruic7/MTT/src/colormap/src/colormap.cpp" "/home/ruic7/MTT/build/colormap/CMakeFiles/colormap.dir/src/colormap.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,7 +19,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/home/ruic7/mymtt/src/colormap/include"
+  "/home/ruic7/MTT/src/colormap/include"
   )
 
 # Targets to which this target links.

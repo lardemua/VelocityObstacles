@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kfilter.dir/src/kstatics.cpp.o"
-  "/home/ruic7/mymtt/devel/lib/libkfilter.pdb"
-  "/home/ruic7/mymtt/devel/lib/libkfilter.so"
+  "/home/ruic7/MTT/devel/lib/libkfilter.pdb"
+  "/home/ruic7/MTT/devel/lib/libkfilter.so"
 )
 
 # Per-language clean rules from dependency scanning.

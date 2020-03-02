@@ -6,5 +6,5 @@ CXX_FLAGS =   -O3
 
 CXX_DEFINES = -DNDEBUG -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"kfilter\"
 
-CXX_INCLUDES = -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/ruic7/mymtt/src/kfilter/include 
+CXX_INCLUDES = -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/ruic7/MTT/src/kfilter/include 
 

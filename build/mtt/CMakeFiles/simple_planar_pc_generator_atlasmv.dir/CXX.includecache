@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/src/mtt/src/simple_planar_pc_generator_atlasmv.cpp
+/home/ruic7/MTT/src/mtt/src/simple_planar_pc_generator_atlasmv.cpp
 stdio.h
 -
 ros/ros.h

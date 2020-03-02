@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/show_axes.dir/src/show_axes.cpp.o"
-  "/home/ruic7/mymtt/devel/lib/atlascar_base/show_axes.pdb"
-  "/home/ruic7/mymtt/devel/lib/atlascar_base/show_axes"
+  "/home/ruic7/MTT/devel/lib/atlascar_base/show_axes.pdb"
+  "/home/ruic7/MTT/devel/lib/atlascar_base/show_axes"
 )
 
 # Per-language clean rules from dependency scanning.

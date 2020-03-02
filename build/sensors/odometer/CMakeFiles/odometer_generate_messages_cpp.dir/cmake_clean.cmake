@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/odometer_generate_messages_cpp"
-  "/home/ruic7/mymtt/devel/include/odometer/OdometerStatus.h"
+  "/home/ruic7/MTT/devel/include/odometer/OdometerStatus.h"
 )
 
 # Per-language clean rules from dependency scanning.

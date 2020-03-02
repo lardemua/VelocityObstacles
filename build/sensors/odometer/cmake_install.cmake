@@ -1,8 +1,8 @@
-# Install script for directory: /home/ruic7/mymtt/src/sensors/odometer
+# Install script for directory: /home/ruic7/MTT/src/sensors/odometer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ruic7/mymtt/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ruic7/MTT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,53 +38,53 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer/msg" TYPE FILE FILES "/home/ruic7/mymtt/src/sensors/odometer/msg/OdometerStatus.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer/msg" TYPE FILE FILES "/home/ruic7/MTT/src/sensors/odometer/msg/OdometerStatus.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer/cmake" TYPE FILE FILES "/home/ruic7/mymtt/build/sensors/odometer/catkin_generated/installspace/odometer-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer/cmake" TYPE FILE FILES "/home/ruic7/MTT/build/sensors/odometer/catkin_generated/installspace/odometer-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/include/odometer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/include/odometer")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/share/roseus/ros/odometer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/share/roseus/ros/odometer")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/share/common-lisp/ros/odometer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/share/common-lisp/ros/odometer")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/share/gennodejs/ros/odometer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/share/gennodejs/ros/odometer")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/ruic7/mymtt/devel/lib/python2.7/dist-packages/odometer")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/ruic7/MTT/devel/lib/python2.7/dist-packages/odometer")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ruic7/mymtt/devel/lib/python2.7/dist-packages/odometer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ruic7/MTT/devel/lib/python2.7/dist-packages/odometer")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/mymtt/build/sensors/odometer/catkin_generated/installspace/odometer.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/MTT/build/sensors/odometer/catkin_generated/installspace/odometer.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer/cmake" TYPE FILE FILES "/home/ruic7/mymtt/build/sensors/odometer/catkin_generated/installspace/odometer-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer/cmake" TYPE FILE FILES "/home/ruic7/MTT/build/sensors/odometer/catkin_generated/installspace/odometer-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer/cmake" TYPE FILE FILES
-    "/home/ruic7/mymtt/build/sensors/odometer/catkin_generated/installspace/odometerConfig.cmake"
-    "/home/ruic7/mymtt/build/sensors/odometer/catkin_generated/installspace/odometerConfig-version.cmake"
+    "/home/ruic7/MTT/build/sensors/odometer/catkin_generated/installspace/odometerConfig.cmake"
+    "/home/ruic7/MTT/build/sensors/odometer/catkin_generated/installspace/odometerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer" TYPE FILE FILES "/home/ruic7/mymtt/src/sensors/odometer/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/odometer" TYPE FILE FILES "/home/ruic7/MTT/src/sensors/odometer/package.xml")
 endif()
 

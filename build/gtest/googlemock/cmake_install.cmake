@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ruic7/mymtt/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ruic7/MTT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ruic7/mymtt/build/gtest/googlemock/gtest/cmake_install.cmake")
+  include("/home/ruic7/MTT/build/gtest/googlemock/gtest/cmake_install.cmake")
 
 endif()
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruic7/mymtt/src
+CMAKE_SOURCE_DIR = /home/ruic7/MTT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
+CMAKE_BINARY_DIR = /home/ruic7/MTT/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/ruic7/mymtt/build/test_results
+	/usr/bin/python2 /opt/ros/melodic/share/catkin/cmake/test/remove_test_results.py /home/ruic7/MTT/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/mymtt/src /home/ruic7/mymtt/src /home/ruic7/mymtt/build /home/ruic7/mymtt/build /home/ruic7/mymtt/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/MTT/src /home/ruic7/MTT/src /home/ruic7/MTT/build /home/ruic7/MTT/build /home/ruic7/MTT/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

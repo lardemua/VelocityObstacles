@@ -67,14 +67,14 @@ set(tcp_client_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(tcp_client_SOURCE_PREFIX /home/ruic7/mymtt/src/tcp_client)
-  set(tcp_client_DEVEL_PREFIX /home/ruic7/mymtt/devel)
+  set(tcp_client_SOURCE_PREFIX /home/ruic7/MTT/src/tcp_client)
+  set(tcp_client_DEVEL_PREFIX /home/ruic7/MTT/devel)
   set(tcp_client_INSTALL_PREFIX "")
   set(tcp_client_PREFIX ${tcp_client_DEVEL_PREFIX})
 else()
   set(tcp_client_SOURCE_PREFIX "")
   set(tcp_client_DEVEL_PREFIX "")
-  set(tcp_client_INSTALL_PREFIX /home/ruic7/mymtt/install)
+  set(tcp_client_INSTALL_PREFIX /home/ruic7/MTT/install)
   set(tcp_client_PREFIX ${tcp_client_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ruic7/mymtt/install/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ruic7/MTT/install/lib;/home/ruic7/MTT/devel/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

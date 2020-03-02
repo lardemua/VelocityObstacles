@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/src/mtt/src/log_recorder.cpp
+/home/ruic7/MTT/src/mtt/src/log_recorder.cpp
 ros/ros.h
 -
 laser_geometry/laser_geometry.h

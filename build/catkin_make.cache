@@ -1,2 +1,2 @@
 atlascar_base:colormap:human_driver_monitor:kfilter:mtt:sensors/odometer:tcp_client:topic_priority
--DCATKIN_DEVEL_PREFIX=/home/ruic7/mymtt/devel -DCMAKE_INSTALL_PREFIX=/home/ruic7/mymtt/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/ruic7/MTT/devel -DCMAKE_INSTALL_PREFIX=/home/ruic7/MTT/install -G Unix Makefiles

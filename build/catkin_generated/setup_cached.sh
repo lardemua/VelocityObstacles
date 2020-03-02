@@ -7,10 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/ruic7/mymtt/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/ruic7/mymtt/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/ruic7/mymtt/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD="/home/ruic7/mymtt/build"
-export PYTHONPATH="/home/ruic7/mymtt/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/ruic7/mymtt/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/ruic7/mymtt/src:$ROS_PACKAGE_PATH"
+export PKG_CONFIG_PATH="/home/ruic7/MTT/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/ruic7/MTT/build"

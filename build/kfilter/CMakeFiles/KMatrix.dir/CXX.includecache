@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/src/kfilter/include/kfilter/kmatrix.hpp
+/home/ruic7/MTT/src/kfilter/include/kfilter/kmatrix.hpp
 vector
 -
 string
@@ -18,15 +18,15 @@ kfilter/ktypes.hpp
 kfilter/kmatrix_impl.hpp
 -
 
-/home/ruic7/mymtt/src/kfilter/include/kfilter/kmatrix_impl.hpp
+/home/ruic7/MTT/src/kfilter/include/kfilter/kmatrix_impl.hpp
 
-/home/ruic7/mymtt/src/kfilter/include/kfilter/ktypes.hpp
+/home/ruic7/MTT/src/kfilter/include/kfilter/ktypes.hpp
 stdexcept
 -
 string
 -
 
-/home/ruic7/mymtt/src/kfilter/samples/KMatrix/kmatrix.cpp
+/home/ruic7/MTT/src/kfilter/samples/KMatrix/kmatrix.cpp
 cstdlib
 -
 iostream

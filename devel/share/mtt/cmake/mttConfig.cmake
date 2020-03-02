@@ -67,14 +67,14 @@ set(mtt_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(mtt_SOURCE_PREFIX /home/ruic7/mymtt/src/mtt)
-  set(mtt_DEVEL_PREFIX /home/ruic7/mymtt/devel)
+  set(mtt_SOURCE_PREFIX /home/ruic7/MTT/src/mtt)
+  set(mtt_DEVEL_PREFIX /home/ruic7/MTT/devel)
   set(mtt_INSTALL_PREFIX "")
   set(mtt_PREFIX ${mtt_DEVEL_PREFIX})
 else()
   set(mtt_SOURCE_PREFIX "")
   set(mtt_DEVEL_PREFIX "")
-  set(mtt_INSTALL_PREFIX /home/ruic7/mymtt/install)
+  set(mtt_INSTALL_PREFIX /home/ruic7/MTT/install)
   set(mtt_PREFIX ${mtt_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(mtt_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/ruic7/mymtt/devel/include;/home/ruic7/mymtt/src/mtt/include " STREQUAL " ")
+if(NOT "/home/ruic7/MTT/devel/include;/home/ruic7/MTT/src/mtt/include " STREQUAL " ")
   set(mtt_INCLUDE_DIRS "")
-  set(_include_dirs "/home/ruic7/mymtt/devel/include;/home/ruic7/mymtt/src/mtt/include")
+  set(_include_dirs "/home/ruic7/MTT/devel/include;/home/ruic7/MTT/src/mtt/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/ruic7/mymtt/devel/include;/home/ruic7/mymtt/src/mtt/include " STRE
         message(FATAL_ERROR "Project 'mtt' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'mtt' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ruic7/mymtt/src/mtt/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'mtt' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ruic7/MTT/src/mtt/${idir}'.  ${_report}")
     endif()
     _list_append_unique(mtt_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ruic7/mymtt/devel/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ruic7/MTT/devel/lib;/home/ruic7/MTT/devel/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

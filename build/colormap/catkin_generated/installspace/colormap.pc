@@ -1,4 +1,4 @@
-prefix=/home/ruic7/mymtt/install
+prefix=/home/ruic7/MTT/install
 
 Name: colormap
 Description: Description of colormap

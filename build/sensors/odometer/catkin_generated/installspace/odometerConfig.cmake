@@ -67,14 +67,14 @@ set(odometer_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(odometer_SOURCE_PREFIX /home/ruic7/mymtt/src/sensors/odometer)
-  set(odometer_DEVEL_PREFIX /home/ruic7/mymtt/devel)
+  set(odometer_SOURCE_PREFIX /home/ruic7/MTT/src/sensors/odometer)
+  set(odometer_DEVEL_PREFIX /home/ruic7/MTT/devel)
   set(odometer_INSTALL_PREFIX "")
   set(odometer_PREFIX ${odometer_DEVEL_PREFIX})
 else()
   set(odometer_SOURCE_PREFIX "")
   set(odometer_DEVEL_PREFIX "")
-  set(odometer_INSTALL_PREFIX /home/ruic7/mymtt/install)
+  set(odometer_INSTALL_PREFIX /home/ruic7/MTT/install)
   set(odometer_PREFIX ${odometer_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ruic7/mymtt/install/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ruic7/MTT/install/lib;/home/ruic7/MTT/devel/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/state_example.dir/src/state_example.cpp.o"
-  "/home/ruic7/mymtt/devel/lib/atlascar_base/state_example.pdb"
-  "/home/ruic7/mymtt/devel/lib/atlascar_base/state_example"
+  "/home/ruic7/MTT/devel/lib/atlascar_base/state_example.pdb"
+  "/home/ruic7/MTT/devel/lib/atlascar_base/state_example"
 )
 
 # Per-language clean rules from dependency scanning.

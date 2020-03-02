@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruic7/mymtt/src
+CMAKE_SOURCE_DIR = /home/ruic7/MTT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
+CMAKE_BINARY_DIR = /home/ruic7/MTT/build
 
 # Utility rule file for bond_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/build: bond_generate_mes
 .PHONY : atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/build
 
 atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/clean:
-	cd /home/ruic7/mymtt/build/atlascar_base && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/ruic7/MTT/build/atlascar_base && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/clean
 
 atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/depend:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/mymtt/src /home/ruic7/mymtt/src/atlascar_base /home/ruic7/mymtt/build /home/ruic7/mymtt/build/atlascar_base /home/ruic7/mymtt/build/atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/MTT/src /home/ruic7/MTT/src/atlascar_base /home/ruic7/MTT/build /home/ruic7/MTT/build/atlascar_base /home/ruic7/MTT/build/atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : atlascar_base/CMakeFiles/bond_generate_messages_cpp.dir/depend
 

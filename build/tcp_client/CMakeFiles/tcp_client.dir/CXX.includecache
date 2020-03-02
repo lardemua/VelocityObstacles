@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/src/tcp_client/include/tcp_client/class_tcp.h
+/home/ruic7/MTT/src/tcp_client/include/tcp_client/class_tcp.h
 sys/socket.h
 -
 netinet/in.h
@@ -28,7 +28,7 @@ errno.h
 iostream
 -
 
-/home/ruic7/mymtt/src/tcp_client/src/class_tcp.cpp
+/home/ruic7/MTT/src/tcp_client/src/class_tcp.cpp
 tcp_client/class_tcp.h
 -
 

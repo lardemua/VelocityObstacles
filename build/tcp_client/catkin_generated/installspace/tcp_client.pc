@@ -1,4 +1,4 @@
-prefix=/home/ruic7/mymtt/install
+prefix=/home/ruic7/MTT/install
 
 Name: tcp_client
 Description: Description of tcp_client

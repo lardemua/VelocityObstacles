@@ -1,8 +1,8 @@
-# Install script for directory: /home/ruic7/mymtt/src/topic_priority
+# Install script for directory: /home/ruic7/MTT/src/topic_priority
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ruic7/mymtt/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ruic7/MTT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/mymtt/build/topic_priority/catkin_generated/installspace/topic_priority.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/MTT/build/topic_priority/catkin_generated/installspace/topic_priority.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/topic_priority/cmake" TYPE FILE FILES
-    "/home/ruic7/mymtt/build/topic_priority/catkin_generated/installspace/topic_priorityConfig.cmake"
-    "/home/ruic7/mymtt/build/topic_priority/catkin_generated/installspace/topic_priorityConfig-version.cmake"
+    "/home/ruic7/MTT/build/topic_priority/catkin_generated/installspace/topic_priorityConfig.cmake"
+    "/home/ruic7/MTT/build/topic_priority/catkin_generated/installspace/topic_priorityConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/topic_priority" TYPE FILE FILES "/home/ruic7/mymtt/src/topic_priority/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/topic_priority" TYPE FILE FILES "/home/ruic7/MTT/src/topic_priority/package.xml")
 endif()
 

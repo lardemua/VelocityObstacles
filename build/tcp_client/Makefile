@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruic7/mymtt/src
+CMAKE_SOURCE_DIR = /home/ruic7/MTT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
+CMAKE_BINARY_DIR = /home/ruic7/MTT/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/mymtt/build/CMakeFiles /home/ruic7/mymtt/build/tcp_client/CMakeFiles/progress.marks
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/mymtt/build/CMakeFiles 0
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles /home/ruic7/MTT/build/tcp_client/CMakeFiles/progress.marks
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/clean
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/preinstall
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/preinstall
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tcp_client/CMakeFiles/tcp_client.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/CMakeFiles/tcp_client.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 tcp_client/CMakeFiles/tcp_client.dir/rule
 .PHONY : tcp_client/CMakeFiles/tcp_client.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ tcp_client: tcp_client/CMakeFiles/tcp_client.dir/rule
 
 # fast build rule for target.
 tcp_client/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/build
 .PHONY : tcp_client/fast
 
 src/class_tcp.o: src/class_tcp.cpp.o
@@ -188,7 +188,7 @@ src/class_tcp.o: src/class_tcp.cpp.o
 
 # target to build an object file
 src/class_tcp.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/src/class_tcp.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/src/class_tcp.cpp.o
 .PHONY : src/class_tcp.cpp.o
 
 src/class_tcp.i: src/class_tcp.cpp.i
@@ -197,7 +197,7 @@ src/class_tcp.i: src/class_tcp.cpp.i
 
 # target to preprocess a source file
 src/class_tcp.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/src/class_tcp.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/src/class_tcp.cpp.i
 .PHONY : src/class_tcp.cpp.i
 
 src/class_tcp.s: src/class_tcp.cpp.s
@@ -206,7 +206,7 @@ src/class_tcp.s: src/class_tcp.cpp.s
 
 # target to generate assembly for a file
 src/class_tcp.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/src/class_tcp.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f tcp_client/CMakeFiles/tcp_client.dir/build.make tcp_client/CMakeFiles/tcp_client.dir/src/class_tcp.cpp.s
 .PHONY : src/class_tcp.cpp.s
 
 # Help Target
@@ -237,6 +237,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

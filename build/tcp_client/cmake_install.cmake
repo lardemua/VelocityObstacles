@@ -1,8 +1,8 @@
-# Install script for directory: /home/ruic7/mymtt/src/tcp_client
+# Install script for directory: /home/ruic7/MTT/src/tcp_client
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ruic7/mymtt/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ruic7/MTT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/mymtt/build/tcp_client/catkin_generated/installspace/tcp_client.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/MTT/build/tcp_client/catkin_generated/installspace/tcp_client.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tcp_client/cmake" TYPE FILE FILES
-    "/home/ruic7/mymtt/build/tcp_client/catkin_generated/installspace/tcp_clientConfig.cmake"
-    "/home/ruic7/mymtt/build/tcp_client/catkin_generated/installspace/tcp_clientConfig-version.cmake"
+    "/home/ruic7/MTT/build/tcp_client/catkin_generated/installspace/tcp_clientConfig.cmake"
+    "/home/ruic7/MTT/build/tcp_client/catkin_generated/installspace/tcp_clientConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tcp_client" TYPE FILE FILES "/home/ruic7/mymtt/src/tcp_client/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tcp_client" TYPE FILE FILES "/home/ruic7/MTT/src/tcp_client/package.xml")
 endif()
 

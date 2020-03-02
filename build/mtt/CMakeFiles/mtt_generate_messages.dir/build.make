@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruic7/mymtt/src
+CMAKE_SOURCE_DIR = /home/ruic7/MTT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
+CMAKE_BINARY_DIR = /home/ruic7/MTT/build
 
 # Utility rule file for mtt_generate_messages.
 
@@ -63,10 +63,10 @@ mtt/CMakeFiles/mtt_generate_messages.dir/build: mtt_generate_messages
 .PHONY : mtt/CMakeFiles/mtt_generate_messages.dir/build
 
 mtt/CMakeFiles/mtt_generate_messages.dir/clean:
-	cd /home/ruic7/mymtt/build/mtt && $(CMAKE_COMMAND) -P CMakeFiles/mtt_generate_messages.dir/cmake_clean.cmake
+	cd /home/ruic7/MTT/build/mtt && $(CMAKE_COMMAND) -P CMakeFiles/mtt_generate_messages.dir/cmake_clean.cmake
 .PHONY : mtt/CMakeFiles/mtt_generate_messages.dir/clean
 
 mtt/CMakeFiles/mtt_generate_messages.dir/depend:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/mymtt/src /home/ruic7/mymtt/src/mtt /home/ruic7/mymtt/build /home/ruic7/mymtt/build/mtt /home/ruic7/mymtt/build/mtt/CMakeFiles/mtt_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ruic7/MTT/src /home/ruic7/MTT/src/mtt /home/ruic7/MTT/build /home/ruic7/MTT/build/mtt /home/ruic7/MTT/build/mtt/CMakeFiles/mtt_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : mtt/CMakeFiles/mtt_generate_messages.dir/depend
 

@@ -67,14 +67,14 @@ set(mtt_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(mtt_SOURCE_PREFIX /home/ruic7/mymtt/src/mtt)
-  set(mtt_DEVEL_PREFIX /home/ruic7/mymtt/devel)
+  set(mtt_SOURCE_PREFIX /home/ruic7/MTT/src/mtt)
+  set(mtt_DEVEL_PREFIX /home/ruic7/MTT/devel)
   set(mtt_INSTALL_PREFIX "")
   set(mtt_PREFIX ${mtt_DEVEL_PREFIX})
 else()
   set(mtt_SOURCE_PREFIX "")
   set(mtt_DEVEL_PREFIX "")
-  set(mtt_INSTALL_PREFIX /home/ruic7/mymtt/install)
+  set(mtt_INSTALL_PREFIX /home/ruic7/MTT/install)
   set(mtt_PREFIX ${mtt_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ruic7/mymtt/install/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ruic7/MTT/install/lib;/home/ruic7/MTT/devel/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

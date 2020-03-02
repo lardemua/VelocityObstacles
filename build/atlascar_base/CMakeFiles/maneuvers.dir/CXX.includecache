@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/devel/include/atlascar_base/ManagerCommand.h
+/home/ruic7/MTT/devel/include/atlascar_base/ManagerCommand.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/ruic7/mymtt/devel/include/atlascar_base/ManagerStatus.h
+/home/ruic7/MTT/devel/include/atlascar_base/ManagerStatus.h
 string
 -
 vector
@@ -42,7 +42,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/ruic7/mymtt/src/atlascar_base/include/atlascar_base/Gamepad.h
+/home/ruic7/MTT/src/atlascar_base/include/atlascar_base/Gamepad.h
 linux/joystick.h
 -
 unistd.h
@@ -68,11 +68,11 @@ sigc++/functors/mem_fun.h
 boost/shared_ptr.hpp
 -
 
-/home/ruic7/mymtt/src/atlascar_base/src/maneuvers.cpp
+/home/ruic7/MTT/src/atlascar_base/src/maneuvers.cpp
 maneuvers.h
-/home/ruic7/mymtt/src/atlascar_base/src/maneuvers.h
+/home/ruic7/MTT/src/atlascar_base/src/maneuvers.h
 
-/home/ruic7/mymtt/src/atlascar_base/src/maneuvers.h
+/home/ruic7/MTT/src/atlascar_base/src/maneuvers.h
 ros/ros.h
 -
 atlascar_base/Gamepad.h
@@ -84,9 +84,9 @@ atlascar_base/ManagerStatus.h
 fstream
 -
 
-/home/ruic7/mymtt/src/atlascar_base/src/maneuvers_node.cpp
+/home/ruic7/MTT/src/atlascar_base/src/maneuvers_node.cpp
 maneuvers.h
-/home/ruic7/mymtt/src/atlascar_base/src/maneuvers.h
+/home/ruic7/MTT/src/atlascar_base/src/maneuvers.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h

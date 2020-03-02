@@ -67,14 +67,14 @@ set(atlascar_base_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(atlascar_base_SOURCE_PREFIX /home/ruic7/mymtt/src/atlascar_base)
-  set(atlascar_base_DEVEL_PREFIX /home/ruic7/mymtt/devel)
+  set(atlascar_base_SOURCE_PREFIX /home/ruic7/MTT/src/atlascar_base)
+  set(atlascar_base_DEVEL_PREFIX /home/ruic7/MTT/devel)
   set(atlascar_base_INSTALL_PREFIX "")
   set(atlascar_base_PREFIX ${atlascar_base_DEVEL_PREFIX})
 else()
   set(atlascar_base_SOURCE_PREFIX "")
   set(atlascar_base_DEVEL_PREFIX "")
-  set(atlascar_base_INSTALL_PREFIX /home/ruic7/mymtt/install)
+  set(atlascar_base_INSTALL_PREFIX /home/ruic7/MTT/install)
   set(atlascar_base_PREFIX ${atlascar_base_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(atlascar_base_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/ruic7/mymtt/devel/include;/home/ruic7/mymtt/src/atlascar_base/include " STREQUAL " ")
+if(NOT "/home/ruic7/MTT/devel/include;/home/ruic7/MTT/src/atlascar_base/include " STREQUAL " ")
   set(atlascar_base_INCLUDE_DIRS "")
-  set(_include_dirs "/home/ruic7/mymtt/devel/include;/home/ruic7/mymtt/src/atlascar_base/include")
+  set(_include_dirs "/home/ruic7/MTT/devel/include;/home/ruic7/MTT/src/atlascar_base/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/ruic7/mymtt/devel/include;/home/ruic7/mymtt/src/atlascar_base/incl
         message(FATAL_ERROR "Project 'atlascar_base' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'atlascar_base' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ruic7/mymtt/src/atlascar_base/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'atlascar_base' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ruic7/MTT/src/atlascar_base/${idir}'.  ${_report}")
     endif()
     _list_append_unique(atlascar_base_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ruic7/mymtt/devel/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ruic7/MTT/devel/lib;/home/ruic7/MTT/devel/lib;/home/ruic7/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

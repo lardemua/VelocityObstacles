@@ -1,8 +1,8 @@
-# Install script for directory: /home/ruic7/mymtt/src/kfilter
+# Install script for directory: /home/ruic7/MTT/src/kfilter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ruic7/mymtt/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ruic7/MTT/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/mymtt/build/kfilter/catkin_generated/installspace/kfilter.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ruic7/MTT/build/kfilter/catkin_generated/installspace/kfilter.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kfilter/cmake" TYPE FILE FILES
-    "/home/ruic7/mymtt/build/kfilter/catkin_generated/installspace/kfilterConfig.cmake"
-    "/home/ruic7/mymtt/build/kfilter/catkin_generated/installspace/kfilterConfig-version.cmake"
+    "/home/ruic7/MTT/build/kfilter/catkin_generated/installspace/kfilterConfig.cmake"
+    "/home/ruic7/MTT/build/kfilter/catkin_generated/installspace/kfilterConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kfilter" TYPE FILE FILES "/home/ruic7/mymtt/src/kfilter/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/kfilter" TYPE FILE FILES "/home/ruic7/MTT/src/kfilter/package.xml")
 endif()
 

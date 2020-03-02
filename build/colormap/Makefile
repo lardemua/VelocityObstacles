@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ruic7/mymtt/src
+CMAKE_SOURCE_DIR = /home/ruic7/MTT/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ruic7/mymtt/build
+CMAKE_BINARY_DIR = /home/ruic7/MTT/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/mymtt/build/CMakeFiles /home/ruic7/mymtt/build/colormap/CMakeFiles/progress.marks
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/mymtt/build/CMakeFiles 0
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles /home/ruic7/MTT/build/colormap/CMakeFiles/progress.marks
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/clean
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/preinstall
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/preinstall
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 colormap/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : colormap/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ roscpp_generate_messages_py: colormap/CMakeFiles/roscpp_generate_messages_py.dir
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_py.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_py.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : colormap/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -194,12 +194,12 @@ roscpp_generate_messages_eus: colormap/CMakeFiles/roscpp_generate_messages_eus.d
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_eus.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_eus.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -209,12 +209,12 @@ roscpp_generate_messages_lisp: colormap/CMakeFiles/roscpp_generate_messages_lisp
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ rosgraph_msgs_generate_messages_cpp: colormap/CMakeFiles/rosgraph_msgs_generate_
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -239,12 +239,12 @@ std_msgs_generate_messages_lisp: colormap/CMakeFiles/std_msgs_generate_messages_
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -254,12 +254,12 @@ roscpp_generate_messages_cpp: colormap/CMakeFiles/roscpp_generate_messages_cpp.d
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -269,12 +269,12 @@ rosgraph_msgs_generate_messages_eus: colormap/CMakeFiles/rosgraph_msgs_generate_
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -284,12 +284,12 @@ rosgraph_msgs_generate_messages_lisp: colormap/CMakeFiles/rosgraph_msgs_generate
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -299,12 +299,12 @@ std_msgs_generate_messages_cpp: colormap/CMakeFiles/std_msgs_generate_messages_c
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -314,12 +314,12 @@ rosgraph_msgs_generate_messages_nodejs: colormap/CMakeFiles/rosgraph_msgs_genera
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -329,12 +329,12 @@ rosgraph_msgs_generate_messages_py: colormap/CMakeFiles/rosgraph_msgs_generate_m
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make colormap/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -344,12 +344,12 @@ std_msgs_generate_messages_eus: colormap/CMakeFiles/std_msgs_generate_messages_e
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -359,12 +359,12 @@ std_msgs_generate_messages_nodejs: colormap/CMakeFiles/std_msgs_generate_message
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -374,12 +374,12 @@ roscpp_generate_messages_nodejs: colormap/CMakeFiles/roscpp_generate_messages_no
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make colormap/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : colormap/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -389,12 +389,12 @@ std_msgs_generate_messages_py: colormap/CMakeFiles/std_msgs_generate_messages_py
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_py.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/std_msgs_generate_messages_py.dir/build.make colormap/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 colormap/CMakeFiles/colormap.dir/rule:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/colormap.dir/rule
+	cd /home/ruic7/MTT/build && $(MAKE) -f CMakeFiles/Makefile2 colormap/CMakeFiles/colormap.dir/rule
 .PHONY : colormap/CMakeFiles/colormap.dir/rule
 
 # Convenience name for target.
@@ -404,7 +404,7 @@ colormap: colormap/CMakeFiles/colormap.dir/rule
 
 # fast build rule for target.
 colormap/fast:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/build
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/build
 .PHONY : colormap/fast
 
 src/colormap.o: src/colormap.cpp.o
@@ -413,7 +413,7 @@ src/colormap.o: src/colormap.cpp.o
 
 # target to build an object file
 src/colormap.cpp.o:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/src/colormap.cpp.o
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/src/colormap.cpp.o
 .PHONY : src/colormap.cpp.o
 
 src/colormap.i: src/colormap.cpp.i
@@ -422,7 +422,7 @@ src/colormap.i: src/colormap.cpp.i
 
 # target to preprocess a source file
 src/colormap.cpp.i:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/src/colormap.cpp.i
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/src/colormap.cpp.i
 .PHONY : src/colormap.cpp.i
 
 src/colormap.s: src/colormap.cpp.s
@@ -431,7 +431,7 @@ src/colormap.s: src/colormap.cpp.s
 
 # target to generate assembly for a file
 src/colormap.cpp.s:
-	cd /home/ruic7/mymtt/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/src/colormap.cpp.s
+	cd /home/ruic7/MTT/build && $(MAKE) -f colormap/CMakeFiles/colormap.dir/build.make colormap/CMakeFiles/colormap.dir/src/colormap.cpp.s
 .PHONY : src/colormap.cpp.s
 
 # Help Target
@@ -477,6 +477,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ruic7/mymtt/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ruic7/MTT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

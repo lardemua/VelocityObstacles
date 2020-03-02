@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ruic7/mymtt/src/colormap/include/colormap/colormap.h
+/home/ruic7/MTT/src/colormap/include/colormap/colormap.h
 ros/ros.h
 -
 sensor_msgs/PointCloud2.h
@@ -20,7 +20,7 @@ tf/transform_broadcaster.h
 opencv2/core/core.hpp
 -
 
-/home/ruic7/mymtt/src/colormap/src/colormap.cpp
+/home/ruic7/MTT/src/colormap/src/colormap.cpp
 colormap/colormap.h
 -
 
