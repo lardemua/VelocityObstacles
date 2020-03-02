@@ -1,0 +1,8 @@
+prefix=/home/ruic7/mymtt/devel
+
+Name: human_driver_monitor
+Description: Description of human_driver_monitor
+Version: 0.0.0
+Cflags: -I/home/ruic7/mymtt/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs tcp_client message_runtime

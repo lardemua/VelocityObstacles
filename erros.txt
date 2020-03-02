@@ -1,0 +1,205 @@
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_py
+[  2%] Built target tcp_client
+[  6%] Built target kfilter
+[  6%] Built target colormap
+[  6%] Built target std_msgs_generate_messages_nodejs
+[  6%] Built target _human_driver_monitor_generate_messages_check_deps_HumanDriverMonitorStatus
+[  6%] Built target _atlascar_base_generate_messages_check_deps_PlcStatus
+[  6%] Built target _atlascar_base_generate_messages_check_deps_ThrottleCommand
+[  6%] Built target _atlascar_base_generate_messages_check_deps_ManagerStatus
+[  6%] Built target _atlascar_base_generate_messages_check_deps_GearboxStatus
+[  6%] Built target _atlascar_base_generate_messages_check_deps_PlcCommand
+[  6%] Built target _atlascar_base_generate_messages_check_deps_ManagerCommand
+[  6%] Built target geometry_msgs_generate_messages_cpp
+[  6%] Built target sensor_msgs_generate_messages_cpp
+[  6%] Built target _atlascar_base_generate_messages_check_deps_GearboxCommand
+[  6%] Built target sensor_msgs_generate_messages_nodejs
+[  6%] Built target _atlascar_base_generate_messages_check_deps_ThrottleStatus
+[  6%] Built target geometry_msgs_generate_messages_nodejs
+[  6%] Built target _mtt_generate_messages_check_deps_Target
+[  6%] Built target geometry_msgs_generate_messages_py
+[  6%] Built target _mtt_generate_messages_check_deps_TargetListPC
+[  6%] Built target sensor_msgs_generate_messages_py
+[  6%] Built target _mtt_generate_messages_check_deps_TargetList
+[  6%] Built target sensor_msgs_generate_messages_lisp
+[  6%] Built target geometry_msgs_generate_messages_eus
+[  6%] Built target geometry_msgs_generate_messages_lisp
+[  6%] Built target sensor_msgs_generate_messages_eus
+[  6%] Built target human_driver_monitor_generate_messages_lisp
+[  9%] Built target Example
+[ 11%] Built target KMatrix
+[ 11%] Built target EKFilter
+[ 12%] Built target KVector
+[ 15%] Built target human_driver_monitor_generate_messages_eus
+[ 15%] Built target human_driver_monitor_generate_messages_cpp
+[ 16%] Built target human_driver_monitor_generate_messages_py
+[ 18%] Built target human_driver_monitor_generate_messages_nodejs
+[ 23%] Built target atlascar_base_generate_messages_cpp
+[ 29%] Built target atlascar_base_generate_messages_lisp
+[ 35%] Built target atlascar_base_generate_messages_py
+[ 41%] Built target atlascar_base_generate_messages_eus
+[ 47%] Built target atlascar_base_generate_messages_nodejs
+[ 49%] Built target mtt_generate_messages_cpp
+[ 51%] Built target mtt_generate_messages_nodejs
+[ 51%] Built target human_driver_monitor_generate_messages
+[ 58%] Built target mtt_generate_messages_eus
+[ 58%] Built target mtt_generate_messages_py
+[ 60%] Built target mtt_generate_messages_lisp
+[ 60%] Built target human_driver_monitor_gencpp
+[ 61%] Built target show_axes
+[ 63%] Built target throttle
+[ 65%] Building CXX object atlascar_base/CMakeFiles/manager.dir/src/manager_node.cpp.o
+[ 66%] Built target maneuvers
+[ 68%] Built target plc
+[ 70%] Built target gearbox
+[ 72%] Built target state_example
+[ 74%] Built target manager_gui
+[ 74%] Built target atlascar_base_generate_messages
+[ 75%] Building CXX object atlascar_base/CMakeFiles/manager.dir/src/manager.cpp.o
+[ 75%] Built target mtt_generate_messages
+[ 76%] Building CXX object mtt/CMakeFiles/gnn.dir/src/gnn.cpp.o
+[ 77%] Built target log_recorder
+[ 79%] Built target simple_planar_pc_generator
+[ 80%] Built target planar_pc_generator
+[ 81%] Building CXX object mtt/CMakeFiles/mtt_pedect.dir/src/mtt_kalman.cpp.o
+[ 82%] Built target simple_planar_pc_generator_atlasmv
+[ 83%] Building CXX object mtt/CMakeFiles/mtt.dir/src/mtt_kalman.cpp.o
+[ 84%] Built target line_fitting
+Scanning dependencies of target human_driver_monitor_node
+[ 86%] Building CXX object mtt/CMakeFiles/mtt_new_msg.dir/src/mtt_kalman.cpp.o
+[ 87%] Building CXX object human_driver_monitor/CMakeFiles/human_driver_monitor_node.dir/src/human_driver_monitor.cpp.o
+[ 88%] Building CXX object human_driver_monitor/CMakeFiles/human_driver_monitor_node.dir/src/human_driver_monitor_node.cpp.o
+In file included from /home/ruic7/mymtt/src/atlascar_base/src/manager_node.cpp:32:0:
+/home/ruic7/mymtt/src/atlascar_base/src/manager.h:45:10: fatal error: odometer/OdometerStatus.h: No such file or directory
+ #include <odometer/OdometerStatus.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+atlascar_base/CMakeFiles/manager.dir/build.make:62: recipe for target 'atlascar_base/CMakeFiles/manager.dir/src/manager_node.cpp.o' failed
+make[2]: *** [atlascar_base/CMakeFiles/manager.dir/src/manager_node.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/ruic7/mymtt/src/atlascar_base/src/manager.cpp:32:0:
+/home/ruic7/mymtt/src/atlascar_base/src/manager.h:45:10: fatal error: odometer/OdometerStatus.h: No such file or directory
+ #include <odometer/OdometerStatus.h>
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+atlascar_base/CMakeFiles/manager.dir/build.make:86: recipe for target 'atlascar_base/CMakeFiles/manager.dir/src/manager.cpp.o' failed
+make[2]: *** [atlascar_base/CMakeFiles/manager.dir/src/manager.cpp.o] Error 1
+CMakeFiles/Makefile2:2485: recipe for target 'atlascar_base/CMakeFiles/manager.dir/all' failed
+make[1]: *** [atlascar_base/CMakeFiles/manager.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+In file included from /home/ruic7/mymtt/src/tcp_client/include/tcp_client/AsyncClient.h:42:0,
+                 from /home/ruic7/mymtt/src/human_driver_monitor/src/human_driver_monitor.h:44,
+                 from /home/ruic7/mymtt/src/human_driver_monitor/src/human_driver_monitor.cpp:32:
+/usr/include/boost/signal.hpp:17:4: warning: #warning "Boost.Signals is no longer being maintained and is now deprecated. Please switch to Boost.Signals2. To disable this warning message, define BOOST_SIGNALS_NO_DEPRECATION_WARNING." [-Wcpp]
+ #  warning                  "Boost.Signals is no longer being maintained and is now deprecated. Please switch to Boost.Signals2. To disable this warning message, define BOOST_SIGNALS_NO_DEPRECATION_WARNING."
+    ^~~~~~~
+In file included from /home/ruic7/mymtt/src/tcp_client/include/tcp_client/AsyncClient.h:42:0,
+                 from /home/ruic7/mymtt/src/human_driver_monitor/src/human_driver_monitor.h:44,
+                 from /home/ruic7/mymtt/src/human_driver_monitor/src/human_driver_monitor_node.cpp:32:
+/usr/include/boost/signal.hpp:17:4: warning: #warning "Boost.Signals is no longer being maintained and is now deprecated. Please switch to Boost.Signals2. To disable this warning message, define BOOST_SIGNALS_NO_DEPRECATION_WARNING." [-Wcpp]
+ #  warning                  "Boost.Signals is no longer being maintained and is now deprecated. Please switch to Boost.Signals2. To disable this warning message, define BOOST_SIGNALS_NO_DEPRECATION_WARNING."
+    ^~~~~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp: In function ‘void MotionModelsIteration(std::vector<boost::shared_ptr<t_linked_list> >&, t_config&)’:
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:71:25: error: ‘TRUE’ was not declared in this scope
+  static bool initialise=TRUE;
+                         ^~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:82:14: error: ‘FALSE’ was not declared in this scope
+   initialise=FALSE;
+              ^~~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:82:14: note: suggested alternative: ‘FILE’
+   initialise=FALSE;
+              ^~~~~
+              FILE
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:363:40: error: ‘FALSE’ was not declared in this scope
+   if(list[i]->classification.occluded==FALSE)///Only update if the object is visible
+                                        ^~~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:363:40: note: suggested alternative: ‘FILE’
+   if(list[i]->classification.occluded==FALSE)///Only update if the object is visible
+                                        ^~~~~
+                                        FILE
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp: In function ‘void MotionModelsIteration(std::vector<boost::shared_ptr<t_linked_list> >&, t_config&)’:
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:71:25: error: ‘TRUE’ was not declared in this scope
+  static bool initialise=TRUE;
+                         ^~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:82:14: error: ‘FALSE’ was not declared in this scope
+   initialise=FALSE;
+              ^~~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:82:14: note: suggested alternative: ‘FILE’
+   initialise=FALSE;
+              ^~~~~
+              FILE
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:363:40: error: ‘FALSE’ was not declared in this scope
+   if(list[i]->classification.occluded==FALSE)///Only update if the object is visible
+                                        ^~~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:363:40: note: suggested alternative: ‘FILE’
+   if(list[i]->classification.occluded==FALSE)///Only update if the object is visible
+                                        ^~~~~
+                                        FILE
+/home/ruic7/mymtt/src/mtt/src/gnn.cpp: In member function ‘std::vector<visualization_msgs::Marker_<std::allocator<void> > > GNN::createTargetMarkers(std::vector<boost::shared_ptr<Target> >)’:
+/home/ruic7/mymtt/src/mtt/src/gnn.cpp:1052:24: error: ‘format’ is not a member of ‘boost’
+                 boost::format fm("%ld");
+                        ^~~~~~
+/home/ruic7/mymtt/src/mtt/src/gnn.cpp:1052:24: note: suggested alternative: ‘forward’
+                 boost::format fm("%ld");
+                        ^~~~~~
+                        forward
+/home/ruic7/mymtt/src/mtt/src/gnn.cpp:1053:17: error: ‘fm’ was not declared in this scope
+                 fm % target->id;
+                 ^~
+/home/ruic7/mymtt/src/mtt/src/gnn.cpp:1053:17: note: suggested alternative: ‘tm’
+                 fm % target->id;
+                 ^~
+                 tm
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp: In function ‘void MotionModelsIteration(std::vector<boost::shared_ptr<t_linked_list> >&, t_config&)’:
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:71:25: error: ‘TRUE’ was not declared in this scope
+  static bool initialise=TRUE;
+                         ^~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:82:14: error: ‘FALSE’ was not declared in this scope
+   initialise=FALSE;
+              ^~~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:82:14: note: suggested alternative: ‘FILE’
+   initialise=FALSE;
+              ^~~~~
+              FILE
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:363:40: error: ‘FALSE’ was not declared in this scope
+   if(list[i]->classification.occluded==FALSE)///Only update if the object is visible
+                                        ^~~~~
+/home/ruic7/mymtt/src/mtt/src/mtt_kalman.cpp:363:40: note: suggested alternative: ‘FILE’
+   if(list[i]->classification.occluded==FALSE)///Only update if the object is visible
+                                        ^~~~~
+                                        FILE
+mtt/CMakeFiles/mtt_pedect.dir/build.make:158: recipe for target 'mtt/CMakeFiles/mtt_pedect.dir/src/mtt_kalman.cpp.o' failed
+make[2]: *** [mtt/CMakeFiles/mtt_pedect.dir/src/mtt_kalman.cpp.o] Error 1
+CMakeFiles/Makefile2:5465: recipe for target 'mtt/CMakeFiles/mtt_pedect.dir/all' failed
+make[1]: *** [mtt/CMakeFiles/mtt_pedect.dir/all] Error 2
+[ 88%] Linking CXX executable /home/ruic7/mymtt/devel/lib/human_driver_monitor/human_driver_monitor_node
+[ 88%] Built target human_driver_monitor_node
+mtt/CMakeFiles/mtt_new_msg.dir/build.make:158: recipe for target 'mtt/CMakeFiles/mtt_new_msg.dir/src/mtt_kalman.cpp.o' failed
+make[2]: *** [mtt/CMakeFiles/mtt_new_msg.dir/src/mtt_kalman.cpp.o] Error 1
+CMakeFiles/Makefile2:5832: recipe for target 'mtt/CMakeFiles/mtt_new_msg.dir/all' failed
+make[1]: *** [mtt/CMakeFiles/mtt_new_msg.dir/all] Error 2
+mtt/CMakeFiles/gnn.dir/build.make:62: recipe for target 'mtt/CMakeFiles/gnn.dir/src/gnn.cpp.o' failed
+make[2]: *** [mtt/CMakeFiles/gnn.dir/src/gnn.cpp.o] Error 1
+CMakeFiles/Makefile2:5030: recipe for target 'mtt/CMakeFiles/gnn.dir/all' failed
+make[1]: *** [mtt/CMakeFiles/gnn.dir/all] Error 2
+mtt/CMakeFiles/mtt.dir/build.make:158: recipe for target 'mtt/CMakeFiles/mtt.dir/src/mtt_kalman.cpp.o' failed
+make[2]: *** [mtt/CMakeFiles/mtt.dir/src/mtt_kalman.cpp.o] Error 1
+CMakeFiles/Makefile2:5542: recipe for target 'mtt/CMakeFiles/mtt.dir/all' failed
+make[1]: *** [mtt/CMakeFiles/mtt.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2
+Base path: /home/ruic7/mymtt
+Source space: /home/ruic7/mymtt/src
+Build space: /home/ruic7/mymtt/build
+Devel space: /home/ruic7/mymtt/devel
+Install space: /home/ruic7/mymtt/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/ruic7/mymtt/build"
+####
+####
+#### Running command: "make -j8 -l8" in "/home/ruic7/mymtt/build"
+####
+Invoking "make -j8 -l8" failed

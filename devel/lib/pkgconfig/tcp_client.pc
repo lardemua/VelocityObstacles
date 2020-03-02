@@ -1,0 +1,8 @@
+prefix=/home/ruic7/mymtt/devel
+
+Name: tcp_client
+Description: Description of tcp_client
+Version: 1.0.0
+Cflags: -I/home/ruic7/mymtt/src/tcp_client/include
+Libs: -L${prefix}/lib -ltcp_client
+Requires: roscpp

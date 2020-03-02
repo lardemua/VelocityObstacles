@@ -1,0 +1,8 @@
+prefix=/home/ruic7/mymtt/install
+
+Name: atlascar_base
+Description: Description of atlascar_base
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs message_runtime tcp_client topic_priority human_driver_monitor pcl_ros interactive_markers kfilter

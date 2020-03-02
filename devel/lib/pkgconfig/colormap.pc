@@ -1,0 +1,8 @@
+prefix=/home/ruic7/mymtt/devel
+
+Name: colormap
+Description: Description of colormap
+Version: 0.0.0
+Cflags: -I/home/ruic7/mymtt/src/colormap/include
+Libs: -L${prefix}/lib -lcolormap
+Requires: 
