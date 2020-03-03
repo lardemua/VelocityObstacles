@@ -1,8 +1,0 @@
-prefix=/home/ruic7/MTT/devel
-
-Name: topic_priority
-Description: Description of topic_priority
-Version: 0.0.0
-Cflags: -I/home/ruic7/MTT/src/topic_priority/include
-Libs: -L${prefix}/lib 
-Requires: roscpp std_msgs

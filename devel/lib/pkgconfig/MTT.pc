@@ -1,8 +1,0 @@
-prefix=/home/ruic7/MTT/devel
-
-Name: MTT
-Description: Description of MTT
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
