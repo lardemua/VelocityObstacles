@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ruic7/MTT/src/kfilter/include/kfilter/kmatrix.hpp
+vector
+-
+string
+-
+iostream
+-
+kfilter/ktypes.hpp
+-
+kfilter/kmatrix_impl.hpp
+-
+
+/home/ruic7/MTT/src/kfilter/include/kfilter/kmatrix_impl.hpp
+
+/home/ruic7/MTT/src/kfilter/include/kfilter/ktypes.hpp
+stdexcept
+-
+string
+-
+
+/home/ruic7/MTT/src/kfilter/samples/KMatrix/kmatrix.cpp
+cstdlib
+-
+iostream
+-
+complex
+-
+kfilter/kmatrix.hpp
+-
+
