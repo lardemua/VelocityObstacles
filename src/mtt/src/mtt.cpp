@@ -253,7 +253,7 @@ int main(int argc,char**argv)
 	NodeHandle nh("~");
 	
 	Subscriber subs_points = nh.subscribe("/points", 1000, PointsHandler);
-	Publisher target_publisher = nh.advertise<mtt::TargetList>("/targets", 1000);
+	Publisher target_publisher = nh.advertise<mtt::TargetListPC>("/targets", 1000);
 	Publisher markers_publisher= nh.advertise<visualization_msgs::MarkerArray>("/markers", 1000);
 	Publisher marker_publisher= nh.advertise<visualization_msgs::Marker>("/marker", 1000);
 	

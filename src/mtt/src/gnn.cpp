@@ -866,7 +866,7 @@ class GNN
             {
                 //structure to be fed to array
                 mtt::Target out_target;
-
+                cout << "create Output Targets" << endl;
                 //build header
                 out_target.header.stamp = ros::Time::now();
                 out_target.header.frame_id = frame_id;
@@ -1238,7 +1238,7 @@ class GNN
 
         void pointsHandler(const sensor_msgs::PointCloud2& msg)
         {
-//             cout<<"received points"<<endl;
+             cout<<"received points"<<endl;
             
             //Get frame of current point cloud
             frame_id = msg.header.frame_id;
@@ -1273,7 +1273,7 @@ class GNN
             //Update search areas
             updateSearchAreas(targets);
             
-//             cout<<"publish targets"<<endl;
+             cout<<"publish targets"<<endl;
             //Get output targets from current iteration
             mtt::TargetList target_list;
             createOutputTargets(targets,target_list);
