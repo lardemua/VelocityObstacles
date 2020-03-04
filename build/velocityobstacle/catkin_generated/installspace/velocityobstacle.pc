@@ -1,0 +1,8 @@
+prefix=/home/ruic7/MTT/install
+
+Name: velocityobstacle
+Description: Description of velocityobstacle
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

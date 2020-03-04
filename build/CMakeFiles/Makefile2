@@ -1169,11 +1169,9 @@ clean: kfilter/CMakeFiles/KVector.dir/clean
 # Directory level rules for directory mtt
 
 # Convenience name for "all" pass in the directory.
-mtt/all: mtt/CMakeFiles/simple_planar_pc_generator.dir/all
 mtt/all: mtt/CMakeFiles/gnn.dir/all
-mtt/all: mtt/CMakeFiles/mtt_new_msg.dir/all
 mtt/all: mtt/CMakeFiles/mtt_generate_messages.dir/all
-mtt/all: mtt/CMakeFiles/mtt.dir/all
+mtt/all: mtt/CMakeFiles/simple_planar_pc_generator.dir/all
 
 .PHONY : mtt/all
 
@@ -1191,8 +1189,6 @@ mtt/clean: mtt/CMakeFiles/tf_generate_messages_eus.dir/clean
 mtt/clean: mtt/CMakeFiles/nodelet_generate_messages_eus.dir/clean
 mtt/clean: mtt/CMakeFiles/nodelet_generate_messages_cpp.dir/clean
 mtt/clean: mtt/CMakeFiles/bond_generate_messages_py.dir/clean
-mtt/clean: mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
-mtt/clean: mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 mtt/clean: mtt/CMakeFiles/mtt_gencpp.dir/clean
 mtt/clean: mtt/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
 mtt/clean: mtt/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
@@ -1209,7 +1205,6 @@ mtt/clean: mtt/CMakeFiles/nodelet_generate_messages_lisp.dir/clean
 mtt/clean: mtt/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/clean
 mtt/clean: mtt/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 mtt/clean: mtt/CMakeFiles/mtt_generate_messages_lisp.dir/clean
-mtt/clean: mtt/CMakeFiles/mtt_new_msg.dir/clean
 mtt/clean: mtt/CMakeFiles/bond_generate_messages_eus.dir/clean
 mtt/clean: mtt/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/clean
 mtt/clean: mtt/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
@@ -1258,7 +1253,8 @@ mtt/clean: mtt/CMakeFiles/mtt_generate_messages_cpp.dir/clean
 mtt/clean: mtt/CMakeFiles/mtt_generate_messages_eus.dir/clean
 mtt/clean: mtt/CMakeFiles/mtt_geneus.dir/clean
 mtt/clean: mtt/CMakeFiles/mtt_genpy.dir/clean
-mtt/clean: mtt/CMakeFiles/mtt.dir/clean
+mtt/clean: mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+mtt/clean: mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
 
 .PHONY : mtt/clean
 
@@ -1680,77 +1676,6 @@ mtt/CMakeFiles/bond_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: mtt/CMakeFiles/bond_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target mtt/CMakeFiles/simple_planar_pc_generator.dir
-
-# All Build rule for target.
-mtt/CMakeFiles/simple_planar_pc_generator.dir/all: colormap/CMakeFiles/colormap.dir/all
-mtt/CMakeFiles/simple_planar_pc_generator.dir/all: kfilter/CMakeFiles/kfilter.dir/all
-mtt/CMakeFiles/simple_planar_pc_generator.dir/all: mtt/CMakeFiles/mtt_generate_messages_cpp.dir/all
-	$(MAKE) -f mtt/CMakeFiles/simple_planar_pc_generator.dir/build.make mtt/CMakeFiles/simple_planar_pc_generator.dir/depend
-	$(MAKE) -f mtt/CMakeFiles/simple_planar_pc_generator.dir/build.make mtt/CMakeFiles/simple_planar_pc_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=59,60 "Built target simple_planar_pc_generator"
-.PHONY : mtt/CMakeFiles/simple_planar_pc_generator.dir/all
-
-# Include target in all.
-all: mtt/CMakeFiles/simple_planar_pc_generator.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-mtt/CMakeFiles/simple_planar_pc_generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 mtt/CMakeFiles/simple_planar_pc_generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
-.PHONY : mtt/CMakeFiles/simple_planar_pc_generator.dir/rule
-
-# Convenience name for target.
-simple_planar_pc_generator: mtt/CMakeFiles/simple_planar_pc_generator.dir/rule
-
-.PHONY : simple_planar_pc_generator
-
-# clean rule for target.
-mtt/CMakeFiles/simple_planar_pc_generator.dir/clean:
-	$(MAKE) -f mtt/CMakeFiles/simple_planar_pc_generator.dir/build.make mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
-.PHONY : mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
-
-# clean rule for target.
-clean: mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_nodejs"
-.PHONY : mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
-.PHONY : mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_srvs_generate_messages_nodejs
-
-# clean rule for target.
-mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
-.PHONY : mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 
 .PHONY : clean
 
@@ -2253,7 +2178,7 @@ mtt/CMakeFiles/mtt_generate_messages_lisp.dir/all: mtt/CMakeFiles/_mtt_generate_
 mtt/CMakeFiles/mtt_generate_messages_lisp.dir/all: mtt/CMakeFiles/_mtt_generate_messages_check_deps_Target.dir/all
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_lisp.dir/build.make mtt/CMakeFiles/mtt_generate_messages_lisp.dir/depend
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_lisp.dir/build.make mtt/CMakeFiles/mtt_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=43,44,45 "Built target mtt_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=37,38,39 "Built target mtt_generate_messages_lisp"
 .PHONY : mtt/CMakeFiles/mtt_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2275,45 +2200,6 @@ mtt/CMakeFiles/mtt_generate_messages_lisp.dir/clean:
 
 # clean rule for target.
 clean: mtt/CMakeFiles/mtt_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target mtt/CMakeFiles/mtt_new_msg.dir
-
-# All Build rule for target.
-mtt/CMakeFiles/mtt_new_msg.dir/all: colormap/CMakeFiles/colormap.dir/all
-mtt/CMakeFiles/mtt_new_msg.dir/all: kfilter/CMakeFiles/kfilter.dir/all
-mtt/CMakeFiles/mtt_new_msg.dir/all: mtt/CMakeFiles/mtt_generate_messages_cpp.dir/all
-	$(MAKE) -f mtt/CMakeFiles/mtt_new_msg.dir/build.make mtt/CMakeFiles/mtt_new_msg.dir/depend
-	$(MAKE) -f mtt/CMakeFiles/mtt_new_msg.dir/build.make mtt/CMakeFiles/mtt_new_msg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=53,54,55,56,57,58 "Built target mtt_new_msg"
-.PHONY : mtt/CMakeFiles/mtt_new_msg.dir/all
-
-# Include target in all.
-all: mtt/CMakeFiles/mtt_new_msg.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-mtt/CMakeFiles/mtt_new_msg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 13
-	$(MAKE) -f CMakeFiles/Makefile2 mtt/CMakeFiles/mtt_new_msg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
-.PHONY : mtt/CMakeFiles/mtt_new_msg.dir/rule
-
-# Convenience name for target.
-mtt_new_msg: mtt/CMakeFiles/mtt_new_msg.dir/rule
-
-.PHONY : mtt_new_msg
-
-# clean rule for target.
-mtt/CMakeFiles/mtt_new_msg.dir/clean:
-	$(MAKE) -f mtt/CMakeFiles/mtt_new_msg.dir/build.make mtt/CMakeFiles/mtt_new_msg.dir/clean
-.PHONY : mtt/CMakeFiles/mtt_new_msg.dir/clean
-
-# clean rule for target.
-clean: mtt/CMakeFiles/mtt_new_msg.dir/clean
 
 .PHONY : clean
 
@@ -3554,7 +3440,7 @@ mtt/CMakeFiles/mtt_generate_messages_py.dir/all: mtt/CMakeFiles/_mtt_generate_me
 mtt/CMakeFiles/mtt_generate_messages_py.dir/all: mtt/CMakeFiles/_mtt_generate_messages_check_deps_Target.dir/all
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_py.dir/build.make mtt/CMakeFiles/mtt_generate_messages_py.dir/depend
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_py.dir/build.make mtt/CMakeFiles/mtt_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=49,50,51,52 "Built target mtt_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=43,44,45,46 "Built target mtt_generate_messages_py"
 .PHONY : mtt/CMakeFiles/mtt_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3623,7 +3509,7 @@ mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/all: mtt/CMakeFiles/_mtt_generat
 mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/all: mtt/CMakeFiles/_mtt_generate_messages_check_deps_Target.dir/all
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/depend
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=46,47,48 "Built target mtt_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=40,41,42 "Built target mtt_generate_messages_nodejs"
 .PHONY : mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3756,7 +3642,7 @@ mtt/CMakeFiles/mtt_generate_messages_cpp.dir/all: mtt/CMakeFiles/_mtt_generate_m
 mtt/CMakeFiles/mtt_generate_messages_cpp.dir/all: mtt/CMakeFiles/_mtt_generate_messages_check_deps_Target.dir/all
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_cpp.dir/build.make mtt/CMakeFiles/mtt_generate_messages_cpp.dir/depend
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_cpp.dir/build.make mtt/CMakeFiles/mtt_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=36,37,38 "Built target mtt_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=30,31,32 "Built target mtt_generate_messages_cpp"
 .PHONY : mtt/CMakeFiles/mtt_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3793,7 +3679,7 @@ mtt/CMakeFiles/mtt_generate_messages_eus.dir/all: mtt/CMakeFiles/_mtt_generate_m
 mtt/CMakeFiles/mtt_generate_messages_eus.dir/all: mtt/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_eus.dir/build.make mtt/CMakeFiles/mtt_generate_messages_eus.dir/depend
 	$(MAKE) -f mtt/CMakeFiles/mtt_generate_messages_eus.dir/build.make mtt/CMakeFiles/mtt_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=39,40,41,42 "Built target mtt_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=33,34,35,36 "Built target mtt_generate_messages_eus"
 .PHONY : mtt/CMakeFiles/mtt_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3883,43 +3769,93 @@ clean: mtt/CMakeFiles/mtt_genpy.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target mtt/CMakeFiles/mtt.dir
+# Target rules for target mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-mtt/CMakeFiles/mtt.dir/all: colormap/CMakeFiles/colormap.dir/all
-mtt/CMakeFiles/mtt.dir/all: kfilter/CMakeFiles/kfilter.dir/all
-mtt/CMakeFiles/mtt.dir/all: mtt/CMakeFiles/mtt_generate_messages_cpp.dir/all
-	$(MAKE) -f mtt/CMakeFiles/mtt.dir/build.make mtt/CMakeFiles/mtt.dir/depend
-	$(MAKE) -f mtt/CMakeFiles/mtt.dir/build.make mtt/CMakeFiles/mtt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=30,31,32,33,34,35 "Built target mtt"
-.PHONY : mtt/CMakeFiles/mtt.dir/all
+mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_nodejs"
+.PHONY : mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
+.PHONY : mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_nodejs: mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_srvs_generate_messages_nodejs
+
+# clean rule for target.
+mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+.PHONY : mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: mtt/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target mtt/CMakeFiles/simple_planar_pc_generator.dir
+
+# All Build rule for target.
+mtt/CMakeFiles/simple_planar_pc_generator.dir/all: colormap/CMakeFiles/colormap.dir/all
+mtt/CMakeFiles/simple_planar_pc_generator.dir/all: kfilter/CMakeFiles/kfilter.dir/all
+mtt/CMakeFiles/simple_planar_pc_generator.dir/all: mtt/CMakeFiles/mtt_generate_messages_cpp.dir/all
+	$(MAKE) -f mtt/CMakeFiles/simple_planar_pc_generator.dir/build.make mtt/CMakeFiles/simple_planar_pc_generator.dir/depend
+	$(MAKE) -f mtt/CMakeFiles/simple_planar_pc_generator.dir/build.make mtt/CMakeFiles/simple_planar_pc_generator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ruic7/MTT/build/CMakeFiles --progress-num=47,48 "Built target simple_planar_pc_generator"
+.PHONY : mtt/CMakeFiles/simple_planar_pc_generator.dir/all
 
 # Include target in all.
-all: mtt/CMakeFiles/mtt.dir/all
+all: mtt/CMakeFiles/simple_planar_pc_generator.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-mtt/CMakeFiles/mtt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 13
-	$(MAKE) -f CMakeFiles/Makefile2 mtt/CMakeFiles/mtt.dir/all
+mtt/CMakeFiles/simple_planar_pc_generator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 mtt/CMakeFiles/simple_planar_pc_generator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ruic7/MTT/build/CMakeFiles 0
-.PHONY : mtt/CMakeFiles/mtt.dir/rule
+.PHONY : mtt/CMakeFiles/simple_planar_pc_generator.dir/rule
 
 # Convenience name for target.
-mtt: mtt/CMakeFiles/mtt.dir/rule
+simple_planar_pc_generator: mtt/CMakeFiles/simple_planar_pc_generator.dir/rule
 
-.PHONY : mtt
-
-# clean rule for target.
-mtt/CMakeFiles/mtt.dir/clean:
-	$(MAKE) -f mtt/CMakeFiles/mtt.dir/build.make mtt/CMakeFiles/mtt.dir/clean
-.PHONY : mtt/CMakeFiles/mtt.dir/clean
+.PHONY : simple_planar_pc_generator
 
 # clean rule for target.
-clean: mtt/CMakeFiles/mtt.dir/clean
+mtt/CMakeFiles/simple_planar_pc_generator.dir/clean:
+	$(MAKE) -f mtt/CMakeFiles/simple_planar_pc_generator.dir/build.make mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
+.PHONY : mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
+
+# clean rule for target.
+clean: mtt/CMakeFiles/simple_planar_pc_generator.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory velocityobstacle
+
+# Convenience name for "all" pass in the directory.
+velocityobstacle/all:
+
+.PHONY : velocityobstacle/all
+
+# Convenience name for "clean" pass in the directory.
+velocityobstacle/clean:
+
+.PHONY : velocityobstacle/clean
+
+# Convenience name for "preinstall" pass in the directory.
+velocityobstacle/preinstall:
+
+.PHONY : velocityobstacle/preinstall
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -134,6 +134,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ruic7/MTT/build/colormap/cmake_install.cmake")
   include("/home/ruic7/MTT/build/kfilter/cmake_install.cmake")
   include("/home/ruic7/MTT/build/mtt/cmake_install.cmake")
+  include("/home/ruic7/MTT/build/velocityobstacle/cmake_install.cmake")
 
 endif()
 

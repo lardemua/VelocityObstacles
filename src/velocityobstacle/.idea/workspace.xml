@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e2efc742-7a0e-4dc7-a58d-2e27836aa11c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/velocityobstacle.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/velocityobstacle.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/velocityobstacle.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/velocityobstacle.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/velocityobstacle.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/velocityobstacle.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/velocityobstacle.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/_catkin_empty_exported_target.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/_catkin_empty_exported_target.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CMakeFiles/velocityobstacle.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/CTestTestfile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/installspace/velocityobstacle.pc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/installspace/velocityobstacleConfig-version.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/installspace/velocityobstacleConfig.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/ordered_paths.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/package.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/pkg.develspace.context.pc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/pkg.installspace.context.pc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/stamps/velocityobstacle/package.xml.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/catkin_generated/stamps/velocityobstacle/pkg.pc.em.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../build/velocityobstacle/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../devel/lib/pkgconfig/velocityobstacle.pc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../devel/lib/velocityobstacle/velocityobstacle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../devel/share/velocityobstacle/cmake/velocityobstacleConfig-version.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../devel/share/velocityobstacle/cmake/velocityobstacleConfig.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/mtt_generate_messages_py.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/simple_planar_pc_generator.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/CMakeFiles/simple_planar_pc_generator.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build/mtt/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../build/mtt/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mtt/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../mtt/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mtt/launch/gnn.launch" beforeDir="false" afterPath="$PROJECT_DIR$/../mtt/launch/gnn.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mtt/launch/view_tracking.launch" beforeDir="false" afterPath="$PROJECT_DIR$/../mtt/launch/view_tracking.launch" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1YfO5TksZTQ5ZQXdslWs0FpRPuR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/catkin_ws/src/rws2020/rws2020_rcosta/player_rcosta/src/player_node.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e2efc742-7a0e-4dc7-a58d-2e27836aa11c" name="Default Changelist" comment="" />
+      <created>1583329998687</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583329998687</updated>
+      <workItem from="1583329999989" duration="10682000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2216" y="310" width="495" height="484" key="FileChooserDialogImpl" timestamp="1583332817246">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2216" y="310" width="495" height="484" key="FileChooserDialogImpl/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583332817246" />
+    <state x="1922" y="187" key="SettingsEditor" timestamp="1583337407041">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1922" y="187" key="SettingsEditor/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583337407041" />
+  </component>
+</project>

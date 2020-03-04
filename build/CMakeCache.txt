@@ -550,7 +550,7 @@ kfilter_SOURCE_DIR:STATIC=/home/ruic7/MTT/src/kfilter
 laser_geometry_DIR:PATH=/opt/ros/melodic/share/laser_geometry/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/liblaser_geometry.so
+lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/melodic/share/message_filters/cmake
@@ -563,6 +563,8 @@ message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
 //Value Computed by CMake
 mtt_BINARY_DIR:STATIC=/home/ruic7/MTT/build/mtt
+
+mtt_DIR:PATH=
 
 //Value Computed by CMake
 mtt_SOURCE_DIR:STATIC=/home/ruic7/MTT/src/mtt
@@ -656,6 +658,12 @@ tf_DIR:PATH=/opt/ros/melodic/share/tf/cmake
 
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/melodic/share/topic_tools/cmake
+
+//Value Computed by CMake
+velocityobstacle_BINARY_DIR:STATIC=/home/ruic7/MTT/build/velocityobstacle
+
+//Value Computed by CMake
+velocityobstacle_SOURCE_DIR:STATIC=/home/ruic7/MTT/src/velocityobstacle
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
@@ -770,7 +778,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

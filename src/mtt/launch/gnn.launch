@@ -8,7 +8,7 @@
             <param name="frame_id" value="/laser_2"/>
         </node>
     </group>-->
-    
+
     <remap from="/laserscan0" to="/left_laser/laserscan"/>
     <remap from="/laserscan1" to="/right_laser/laserscan"/>
 
