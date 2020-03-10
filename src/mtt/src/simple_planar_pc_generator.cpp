@@ -182,11 +182,11 @@ class PointCloudGeneretor
 
             pc_accumulated += pc_projected;
 
-//            #if _USE_DEBUG_
+            #if _USE_DEBUG_
                 ROS_WARN("pc_transformed has %d points", (int)pc_transformed.size());
                 ROS_WARN("pc_filtered has %d points", (int)pc_filtered.size());
                 ROS_WARN("pc_accumulated now has %d points", (int)pc_accumulated.size());
-//            #endif
+            #endif
         }
 
         void scan1Handler(const sensor_msgs::LaserScan::ConstPtr& scan_in)

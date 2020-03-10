@@ -35,7 +35,8 @@ struct Target_
     , initialpose()
     , finalpose()
     , velocity()
-    , size(0.0)  {
+    , size(0.0)
+    , radius(0.0)  {
     }
   Target_(const ContainerAllocator& _alloc)
     : header(_alloc)
@@ -44,7 +45,8 @@ struct Target_
     , initialpose(_alloc)
     , finalpose(_alloc)
     , velocity(_alloc)
-    , size(0.0)  {
+    , size(0.0)
+    , radius(0.0)  {
   (void)_alloc;
     }
 
@@ -70,6 +72,9 @@ struct Target_
 
    typedef double _size_type;
   _size_type size;
+
+   typedef double _radius_type;
+  _radius_type radius;
 
 
 
@@ -149,12 +154,12 @@ struct MD5Sum< ::mtt::Target_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "640b1c6f15e51d4540cd40fcadfd14b7";
+    return "baf79933d4acb5b34497b2dac57f0c51";
   }
 
   static const char* value(const ::mtt::Target_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x640b1c6f15e51d45ULL;
-  static const uint64_t static_value2 = 0x40cd40fcadfd14b7ULL;
+  static const uint64_t static_value1 = 0xbaf79933d4acb5b3ULL;
+  static const uint64_t static_value2 = 0x4497b2dac57f0c51ULL;
 };
 
 template<class ContainerAllocator>
@@ -181,6 +186,7 @@ struct Definition< ::mtt::Target_<ContainerAllocator> >
 "geometry_msgs/Point finalpose\n"
 "geometry_msgs/Twist velocity\n"
 "float64 size\n"
+"float64 radius\n"
 "\n"
 "#sensor_msgs/PointCloud2 position\n"
 "#sensor_msgs/PointCloud2 velocity\n"
@@ -267,6 +273,7 @@ namespace serialization
       stream.next(m.finalpose);
       stream.next(m.velocity);
       stream.next(m.size);
+      stream.next(m.radius);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -304,6 +311,8 @@ struct Printer< ::mtt::Target_<ContainerAllocator> >
     Printer< ::geometry_msgs::Twist_<ContainerAllocator> >::stream(s, indent + "  ", v.velocity);
     s << indent << "size: ";
     Printer<double>::stream(s, indent + "  ", v.size);
+    s << indent << "radius: ";
+    Printer<double>::stream(s, indent + "  ", v.radius);
   }
 };
 

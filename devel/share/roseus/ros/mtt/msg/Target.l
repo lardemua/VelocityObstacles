@@ -18,7 +18,7 @@
 
 (defclass mtt::Target
   :super ros::object
-  :slots (_header _id _pose _initialpose _finalpose _velocity _size ))
+  :slots (_header _id _pose _initialpose _finalpose _velocity _size _radius ))
 
 (defmethod mtt::Target
   (:init
@@ -30,6 +30,7 @@
     ((:finalpose __finalpose) (instance geometry_msgs::Point :init))
     ((:velocity __velocity) (instance geometry_msgs::Twist :init))
     ((:size __size) 0.0)
+    ((:radius __radius) 0.0)
     )
    (send-super :init)
    (setq _header __header)
@@ -39,6 +40,7 @@
    (setq _finalpose __finalpose)
    (setq _velocity __velocity)
    (setq _size (float __size))
+   (setq _radius (float __radius))
    self)
   (:header
    (&rest __header)
@@ -81,6 +83,9 @@
   (:size
    (&optional __size)
    (if __size (setq _size __size)) _size)
+  (:radius
+   (&optional __radius)
+   (if __radius (setq _radius __radius)) _radius)
   (:serialization-length
    ()
    (+
@@ -97,6 +102,8 @@
     ;; geometry_msgs/Twist _velocity
     (send _velocity :serialization-length)
     ;; float64 _size
+    8
+    ;; float64 _radius
     8
     ))
   (:serialize
@@ -117,6 +124,8 @@
        (send _velocity :serialize s)
      ;; float64 _size
        (sys::poke _size (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float64 _radius
+       (sys::poke _radius (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -135,11 +144,13 @@
      (send _velocity :deserialize buf ptr-) (incf ptr- (send _velocity :serialization-length))
    ;; float64 _size
      (setq _size (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float64 _radius
+     (setq _radius (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get mtt::Target :md5sum-) "640b1c6f15e51d4540cd40fcadfd14b7")
+(setf (get mtt::Target :md5sum-) "baf79933d4acb5b34497b2dac57f0c51")
 (setf (get mtt::Target :datatype-) "mtt/Target")
 (setf (get mtt::Target :definition-)
       "#the header of the message
@@ -150,6 +161,7 @@ geometry_msgs/Point initialpose
 geometry_msgs/Point finalpose
 geometry_msgs/Twist velocity
 float64 size
+float64 radius
 
 #sensor_msgs/PointCloud2 position
 #sensor_msgs/PointCloud2 velocity
@@ -215,6 +227,6 @@ float64 z
 
 
 
-(provide :mtt/Target "640b1c6f15e51d4540cd40fcadfd14b7")
+(provide :mtt/Target "baf79933d4acb5b34497b2dac57f0c51")
 
 

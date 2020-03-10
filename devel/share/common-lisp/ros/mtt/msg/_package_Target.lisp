@@ -13,4 +13,6 @@
           VELOCITY
           SIZE-VAL
           SIZE
+          RADIUS-VAL
+          RADIUS
 ))

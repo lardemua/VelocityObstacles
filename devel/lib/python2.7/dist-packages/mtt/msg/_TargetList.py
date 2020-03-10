@@ -10,7 +10,7 @@ import mtt.msg
 import std_msgs.msg
 
 class TargetList(genpy.Message):
-  _md5sum = "47f4cb934cefc440ec66e810f593a9ae"
+  _md5sum = "b8607967434b3d13ee25504cdb114f58"
   _type = "mtt/TargetList"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """#the header of the message
@@ -26,6 +26,7 @@ geometry_msgs/Point initialpose
 geometry_msgs/Point finalpose
 geometry_msgs/Twist velocity
 float64 size
+float64 radius
 
 #sensor_msgs/PointCloud2 position
 #sensor_msgs/PointCloud2 velocity
@@ -159,7 +160,8 @@ float64 z"""
         _v10 = _v8.angular
         _x = _v10
         buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
-        buff.write(_get_struct_d().pack(val1.size))
+        _x = val1
+        buff.write(_get_struct_2d().pack(_x.size, _x.radius))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -231,9 +233,10 @@ float64 z"""
         start = end
         end += 24
         (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _x = val1
         start = end
-        end += 8
-        (val1.size,) = _get_struct_d().unpack(str[start:end])
+        end += 16
+        (_x.size, _x.radius,) = _get_struct_2d().unpack(str[start:end])
         self.Targets.append(val1)
       return self
     except struct.error as e:
@@ -282,7 +285,8 @@ float64 z"""
         _v30 = _v28.angular
         _x = _v30
         buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
-        buff.write(_get_struct_d().pack(val1.size))
+        _x = val1
+        buff.write(_get_struct_2d().pack(_x.size, _x.radius))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -355,9 +359,10 @@ float64 z"""
         start = end
         end += 24
         (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _x = val1
         start = end
-        end += 8
-        (val1.size,) = _get_struct_d().unpack(str[start:end])
+        end += 16
+        (_x.size, _x.radius,) = _get_struct_2d().unpack(str[start:end])
         self.Targets.append(val1)
       return self
     except struct.error as e:
@@ -367,12 +372,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_d = None
-def _get_struct_d():
-    global _struct_d
-    if _struct_d is None:
-        _struct_d = struct.Struct("<d")
-    return _struct_d
+_struct_2d = None
+def _get_struct_2d():
+    global _struct_2d
+    if _struct_2d is None:
+        _struct_2d = struct.Struct("<2d")
+    return _struct_2d
 _struct_4d = None
 def _get_struct_4d():
     global _struct_4d

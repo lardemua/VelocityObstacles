@@ -115,12 +115,12 @@ struct MD5Sum< ::mtt::TargetList_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "47f4cb934cefc440ec66e810f593a9ae";
+    return "b8607967434b3d13ee25504cdb114f58";
   }
 
   static const char* value(const ::mtt::TargetList_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x47f4cb934cefc440ULL;
-  static const uint64_t static_value2 = 0xec66e810f593a9aeULL;
+  static const uint64_t static_value1 = 0xb8607967434b3d13ULL;
+  static const uint64_t static_value2 = 0xee25504cdb114f58ULL;
 };
 
 template<class ContainerAllocator>
@@ -152,6 +152,7 @@ struct Definition< ::mtt::TargetList_<ContainerAllocator> >
 "geometry_msgs/Point finalpose\n"
 "geometry_msgs/Twist velocity\n"
 "float64 size\n"
+"float64 radius\n"
 "\n"
 "#sensor_msgs/PointCloud2 position\n"
 "#sensor_msgs/PointCloud2 velocity\n"

@@ -27,6 +27,7 @@ class Target {
       this.finalpose = null;
       this.velocity = null;
       this.size = null;
+      this.radius = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -71,6 +72,12 @@ class Target {
       else {
         this.size = 0.0;
       }
+      if (initObj.hasOwnProperty('radius')) {
+        this.radius = initObj.radius
+      }
+      else {
+        this.radius = 0.0;
+      }
     }
   }
 
@@ -90,6 +97,8 @@ class Target {
     bufferOffset = geometry_msgs.msg.Twist.serialize(obj.velocity, buffer, bufferOffset);
     // Serialize message field [size]
     bufferOffset = _serializer.float64(obj.size, buffer, bufferOffset);
+    // Serialize message field [radius]
+    bufferOffset = _serializer.float64(obj.radius, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -111,13 +120,15 @@ class Target {
     data.velocity = geometry_msgs.msg.Twist.deserialize(buffer, bufferOffset);
     // Deserialize message field [size]
     data.size = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [radius]
+    data.radius = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 164;
+    return length + 172;
   }
 
   static datatype() {
@@ -127,7 +138,7 @@ class Target {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '640b1c6f15e51d4540cd40fcadfd14b7';
+    return 'baf79933d4acb5b34497b2dac57f0c51';
   }
 
   static messageDefinition() {
@@ -141,6 +152,7 @@ class Target {
     geometry_msgs/Point finalpose
     geometry_msgs/Twist velocity
     float64 size
+    float64 radius
     
     #sensor_msgs/PointCloud2 position
     #sensor_msgs/PointCloud2 velocity
@@ -258,6 +270,13 @@ class Target {
     }
     else {
       resolved.size = 0.0
+    }
+
+    if (msg.radius !== undefined) {
+      resolved.radius = msg.radius;
+    }
+    else {
+      resolved.radius = 0.0
     }
 
     return resolved;

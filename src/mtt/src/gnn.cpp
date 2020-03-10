@@ -443,14 +443,22 @@ class Target
                 
                 if(p->r<rmin)
                     rmin = p->r;
+                
             }
             
             tm = (points[0]->t+points[points.size()-1]->t)/2.;
+            // cout << points[0]-> t <<"   " << tm << endl;
             
             centroid.x = xsum/points.size();
             centroid.y = ysum/points.size();
+
+            // Determina o raio do target atraves da distancia do primeiro ate ao centroid
+            radius = sqrt(pow(centroid.x-points[0]->x,2)+pow(centroid.y-points[0]->y,2));
+            // cout<<"Calculating radius. Got: "<<radius<<endl;
+            
         }
         
+
         void associate(Target::Ptr target)
         {
             found = true;
@@ -464,6 +472,7 @@ class Target
             if(occluded_time<0)
                 occluded_time=0;
         }
+
 
         double checkAssociationCriteria(Target::Ptr target)
         {
@@ -518,11 +527,13 @@ class Target
         Point predicted_position;
         Point measurement;
         Point estimated_velocity;
+        Point firstpoint;
+
         
         MotionModel motion_model;
         
         bool occluded;
-        double rmin,tm;
+        double rmin,tm,radius;
         long id;
         long local_id;
         
@@ -547,6 +558,7 @@ class GNN
             string parameters_url;
             nh.param("parameters",parameters_url,std::string("not avaliable"));
             
+            
             string package_tag = "package://";
             int pos = parameters_url.find(package_tag);
             if(pos != string::npos)
@@ -560,6 +572,7 @@ class GNN
             }
             
             parameters.open(parameters_url.c_str(),cv::FileStorage::READ);
+            
             
             points_subscriber = nh.subscribe("/points", 1,&GNN::pointsHandler,this);
             targets_publisher = nh.advertise<mtt::TargetList>("/targets", 1000);
@@ -609,6 +622,7 @@ class GNN
             //Create empty point associations
             vector<pair<Target::Ptr,bool> > point_association;
             point_association.resize(data.size(),make_pair(Target::Ptr(),false));
+
             
             //Go thought all points in the data vector
             for(uint p=0;p<data.size();p++)
@@ -866,7 +880,7 @@ class GNN
             {
                 //structure to be fed to array
                 mtt::Target out_target;
-                cout << "create Output Targets" << endl;
+//                cout << "create Output Targets" << endl;
                 //build header
                 out_target.header.stamp = ros::Time::now();
                 out_target.header.frame_id = frame_id;
@@ -892,6 +906,7 @@ class GNN
                 out_target.finalpose.z = 0;
                 
                 out_target.size = target->length;
+                out_target.radius = target->radius;
                 
                 target_list.Targets.push_back(out_target);
             }
@@ -900,13 +915,16 @@ class GNN
         vector<visualization_msgs::Marker> createMeasurementsMarkers(const vector<Target::Ptr> targets)
         {
             static Markers marker_list;
+
             string tracking_frame = frame_id;
-            
+
             //Reduce the elements status, ADD to REMOVE and REMOVE to delete
             marker_list.decrement();
             
             //Create a color map
             class_colormap colormap("hsv",10, 1, false);
+
+            
             
             visualization_msgs::Marker marker_centers;
             
@@ -935,6 +953,14 @@ class GNN
             for(int i=0;i<targets.size();i++)
             {
                 Target::Ptr target = targets[i];
+                visualization_msgs::Marker ellipse;
+
+                
+
+                ellipse = makeEllipse(target->centroid,target->radius,target->radius,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
+                ellipse.header.frame_id = tracking_frame;
+                ellipse.header.stamp = ros::Time::now();
+                marker_list.update(ellipse);
                 
                 marker_centers.colors[i] = colormap.color(5);
                 
@@ -944,6 +970,7 @@ class GNN
             }
             
             marker_list.update(marker_centers);
+
             
             //Remove markers that should not be transmitted
             marker_list.clean();
@@ -1081,8 +1108,9 @@ class GNN
                 }
                 
                 //Gatting ellipse, not working now
-//                 visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,target->search_area.ellipse_A,target->search_area.ellipse_B,target->search_area.angle,"search areas",colormap.color(target->id),target->id);
-                visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,0.5,0.4,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
+                //visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,target->search_area.ellipse_A,target->search_area.ellipse_B,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
+                visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,target->radius,target->radius,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
+                // visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,0.5,0.4,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
                 
                 ellipse.header.frame_id = tracking_frame;
                 ellipse.header.stamp = ros::Time::now();
@@ -1273,7 +1301,7 @@ class GNN
             //Update search areas
             updateSearchAreas(targets);
             
-             cout<<"publish targets"<<endl;
+            //cout<<"publish targets"<<endl;
             //Get output targets from current iteration
             mtt::TargetList target_list;
             createOutputTargets(targets,target_list);

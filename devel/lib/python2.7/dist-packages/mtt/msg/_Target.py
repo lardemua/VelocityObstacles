@@ -9,7 +9,7 @@ import geometry_msgs.msg
 import std_msgs.msg
 
 class Target(genpy.Message):
-  _md5sum = "640b1c6f15e51d4540cd40fcadfd14b7"
+  _md5sum = "baf79933d4acb5b34497b2dac57f0c51"
   _type = "mtt/Target"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """#the header of the message
@@ -20,6 +20,7 @@ geometry_msgs/Point initialpose
 geometry_msgs/Point finalpose
 geometry_msgs/Twist velocity
 float64 size
+float64 radius
 
 #sensor_msgs/PointCloud2 position
 #sensor_msgs/PointCloud2 velocity
@@ -81,8 +82,8 @@ MSG: geometry_msgs/Vector3
 float64 x
 float64 y
 float64 z"""
-  __slots__ = ['header','id','pose','initialpose','finalpose','velocity','size']
-  _slot_types = ['std_msgs/Header','uint32','geometry_msgs/Pose','geometry_msgs/Point','geometry_msgs/Point','geometry_msgs/Twist','float64']
+  __slots__ = ['header','id','pose','initialpose','finalpose','velocity','size','radius']
+  _slot_types = ['std_msgs/Header','uint32','geometry_msgs/Pose','geometry_msgs/Point','geometry_msgs/Point','geometry_msgs/Twist','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -92,7 +93,7 @@ float64 z"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,id,pose,initialpose,finalpose,velocity,size
+       header,id,pose,initialpose,finalpose,velocity,size,radius
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -115,6 +116,8 @@ float64 z"""
         self.velocity = geometry_msgs.msg.Twist()
       if self.size is None:
         self.size = 0.
+      if self.radius is None:
+        self.radius = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.id = 0
@@ -123,6 +126,7 @@ float64 z"""
       self.finalpose = geometry_msgs.msg.Point()
       self.velocity = geometry_msgs.msg.Twist()
       self.size = 0.
+      self.radius = 0.
 
   def _get_types(self):
     """
@@ -145,7 +149,7 @@ float64 z"""
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_I20d().pack(_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size))
+      buff.write(_get_struct_I21d().pack(_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size, _x.radius))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -181,8 +185,8 @@ float64 z"""
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 164
-      (_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size,) = _get_struct_I20d().unpack(str[start:end])
+      end += 172
+      (_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size, _x.radius,) = _get_struct_I21d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -204,7 +208,7 @@ float64 z"""
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_I20d().pack(_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size))
+      buff.write(_get_struct_I21d().pack(_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size, _x.radius))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -241,8 +245,8 @@ float64 z"""
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 164
-      (_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size,) = _get_struct_I20d().unpack(str[start:end])
+      end += 172
+      (_x.id, _x.pose.position.x, _x.pose.position.y, _x.pose.position.z, _x.pose.orientation.x, _x.pose.orientation.y, _x.pose.orientation.z, _x.pose.orientation.w, _x.initialpose.x, _x.initialpose.y, _x.initialpose.z, _x.finalpose.x, _x.finalpose.y, _x.finalpose.z, _x.velocity.linear.x, _x.velocity.linear.y, _x.velocity.linear.z, _x.velocity.angular.x, _x.velocity.angular.y, _x.velocity.angular.z, _x.size, _x.radius,) = _get_struct_I21d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -251,15 +255,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_I20d = None
-def _get_struct_I20d():
-    global _struct_I20d
-    if _struct_I20d is None:
-        _struct_I20d = struct.Struct("<I20d")
-    return _struct_I20d
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
+_struct_I21d = None
+def _get_struct_I21d():
+    global _struct_I21d
+    if _struct_I21d is None:
+        _struct_I21d = struct.Struct("<I21d")
+    return _struct_I21d

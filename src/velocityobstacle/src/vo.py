@@ -14,26 +14,26 @@ class VO:
             alvo = msg.Targets[i]
             Target(alvo)
 
-class Target(VO):
-    def __init__(self,alvo):
-        self.id = alvo.id
+class Target:
+    def __init__(self,VO):
+        self.id = VO.alvo.id
         self.velocidade = Twist()
         self.posicao = Point()
         self.orientacao = Quaternion()
 
-        self.velocidade.linear = alvo.velocity
-        self.posicao.x = alvo.pose.position.x
-        self.posicao.y = alvo.pose.position.y
-        self.posicao.z = alvo.pose.position.z
-        self.orientacao.x = alvo.pose.orientation.x
-        self.orientacao.y = alvo.pose.orientation.y
-        self.orientacao.z = alvo.pose.orientation.z
-        self.orientacao.w = alvo.pose.orientation.w
+        self.velocidade.linear = VO.alvo.velocity
+        self.posicao.x = VO.alvo.pose.position.x
+        self.posicao.y = VO.alvo.pose.position.y
+        self.posicao.z = VO.alvo.pose.position.z
+        self.orientacao.x = VO.alvo.pose.orientation.x
+        self.orientacao.y = VO.alvo.pose.orientation.y
+        self.orientacao.z = VO.alvo.pose.orientation.z
+        self.orientacao.w = VO.alvo.pose.orientation.w
 
         Markers(self)
         # print("IM AT TARGET")
 
-class Markers(Target):
+class Markers:
     def __init__(self,Target):
         self.start_point = Target.posicao
         self.end_point = Point()
@@ -53,9 +53,9 @@ class Markers(Target):
         self.cone.points.append(self.end_point)
 
 
-        self.pub_marker = rospy.Publisher('/cone', Marker, queue_size=1000 )
+        self.publisher_marker = rospy.Publisher('/cone', Marker, queue_size=1000 )
 
-        self.pub_marker.publish(self.cone)
+        self.pubublisher_marker.publish(self.cone)
         # print("IM here")
 
 

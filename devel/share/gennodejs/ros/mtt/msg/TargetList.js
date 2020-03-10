@@ -71,7 +71,7 @@ class TargetList {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '47f4cb934cefc440ec66e810f593a9ae';
+    return 'b8607967434b3d13ee25504cdb114f58';
   }
 
   static messageDefinition() {
@@ -90,6 +90,7 @@ class TargetList {
     geometry_msgs/Point finalpose
     geometry_msgs/Twist velocity
     float64 size
+    float64 radius
     
     #sensor_msgs/PointCloud2 position
     #sensor_msgs/PointCloud2 velocity

@@ -61,7 +61,7 @@
    self)
   )
 
-(setf (get mtt::TargetList :md5sum-) "47f4cb934cefc440ec66e810f593a9ae")
+(setf (get mtt::TargetList :md5sum-) "b8607967434b3d13ee25504cdb114f58")
 (setf (get mtt::TargetList :datatype-) "mtt/TargetList")
 (setf (get mtt::TargetList :definition-)
       "#the header of the message
@@ -77,6 +77,7 @@ geometry_msgs/Point initialpose
 geometry_msgs/Point finalpose
 geometry_msgs/Twist velocity
 float64 size
+float64 radius
 
 #sensor_msgs/PointCloud2 position
 #sensor_msgs/PointCloud2 velocity
@@ -142,6 +143,6 @@ float64 z
 
 
 
-(provide :mtt/TargetList "47f4cb934cefc440ec66e810f593a9ae")
+(provide :mtt/TargetList "b8607967434b3d13ee25504cdb114f58")
 
 
