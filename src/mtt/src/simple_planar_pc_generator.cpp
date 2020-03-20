@@ -91,8 +91,8 @@ class PointCloudGeneretor
             
             pc_accumulated.header.frame_id = ros::names::remap("/tracking_frame");
 
-            scan_1_subscriber = nh.subscribe ("/laserscan0", 1000, &PointCloudGeneretor::scan1Handler,this);
-            scan_2_subscriber = nh.subscribe ("/laserscan1", 1000, &PointCloudGeneretor::scan2Handler,this);
+            scan_1_subscriber = nh.subscribe ("/laserscan1", 1000, &PointCloudGeneretor::scan1Handler,this);
+            scan_2_subscriber = nh.subscribe ("/laserscan2", 1000, &PointCloudGeneretor::scan2Handler,this);
             
             //declare the publisher
             points_publisher = nh.advertise<sensor_msgs::PointCloud2>("/pc_out", 1000);
@@ -174,7 +174,6 @@ class PointCloudGeneretor
             projection.setModelCoefficients(coeff);
             projection.filter(pc_projected);
 
-
             coeff.reset();
             input_cloud_constptr.reset();
             convex_hull_constptr.reset();
@@ -197,12 +196,10 @@ class PointCloudGeneretor
             projector.transformLaserScanToPointCloud(scan_in->header.frame_id, *scan_in,pcmsg_in,transform_listener);   // não é necessário
             pcmsg_in.header.stamp=ros::Time();
             pcmsg_in.header.frame_id=scan_in->header.frame_id;
-
             pcl::PointCloud<pcl::PointXYZ> pc_in;
             pcl::PCLPointCloud2 pcl_pc;
             pcl_conversions::toPCL(pcmsg_in, pcl_pc);
             pcl::fromPCLPointCloud2(pcl_pc, pc_in);
-            
             filterCloud(&pc_in, scan_in->header.frame_id);
             
             laserscan_1_arrived=true;

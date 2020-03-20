@@ -114,15 +114,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923c1b8b-c104-4aeb-a1be-c87620237824" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/velocityobstacle/src/DummieTargetGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MTT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MTT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/mtt/CMakeFiles/gnn.dir/src/gnn.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/mtt/CMakeFiles/gnn.dir/src/gnn.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/devel/lib/mtt/gnn" beforeDir="false" afterPath="$PROJECT_DIR$/devel/lib/mtt/gnn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mtt/launch/mtt.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/mtt/launch/mtt.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mtt/rvizconfig/view_tracking.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/src/mtt/rvizconfig/view_tracking.rviz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mtt/src/gnn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mtt/src/gnn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/velocityobstacle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/velocityobstacle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/velocityobstacle/src/vo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/velocityobstacle/src/vo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/velocityobstacle/src/DummieTargetGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/velocityobstacle/src/DummieTargetGenerator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,10 +161,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../catkin_ws/src/rws2020/rws2020_moliveira/player_moliveira/src/player_node.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.DummieTargetGenerator">
     <configuration name="_mtt_generate_messages_check_deps_TargetListPC" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mtt" TARGET_NAME="_mtt_generate_messages_check_deps_TargetListPC" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -681,6 +680,33 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DummieTargetGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MTT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/velocityobstacle/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/velocityobstacle/src/DummieTargetGenerator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.DummieTargetGenerator" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -700,6 +726,9 @@
       <workItem from="1583314754071" duration="7967000" />
       <workItem from="1583333867084" duration="6000" />
       <workItem from="1583763282989" duration="1856000" />
+      <workItem from="1583923804036" duration="8262000" />
+      <workItem from="1583937543317" duration="7750000" />
+      <workItem from="1584034991105" duration="13222000" />
     </task>
     <task id="LOCAL-00001" summary="Rebuilt final version">
       <created>1583244470647</created>
@@ -730,39 +759,49 @@
     <option name="LAST_COMMIT_MESSAGE" value="Adicionado simple_planar_pc_generator funcionamento do gnn comprovado" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1677" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583151550621">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="667" y="155" width="642" height="795" key="#DummieTargetGenerator" timestamp="1583936949234">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="667" y="155" width="642" height="795" key="#DummieTargetGenerator/67.27.1853.1053@67.27.1853.1053" timestamp="1583936949234" />
+    <state x="296" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583937146730">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="178" y="107" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583146858442" />
     <state x="1677" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583151550621" />
+    <state x="296" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583937146730" />
     <state x="1826" y="96" width="1205" height="912" key="CommitChangelistDialog2" timestamp="1583321693482">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="1826" y="96" width="1205" height="912" key="CommitChangelistDialog2/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583321693482" />
-    <state x="2216" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1583329246125">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="816" y="329" width="501" height="484" key="FileChooserDialogImpl" timestamp="1583937350724">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="2216" y="310" width="424" height="484" key="FileChooserDialogImpl/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583329246125" />
-    <state width="1807" height="342" key="GridCell.Tab.0.bottom" timestamp="1583186189393">
-      <screen x="0" y="27" width="1440" height="873" />
+    <state x="816" y="329" width="501" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583937350724" />
+    <state width="1807" height="277" key="GridCell.Tab.0.bottom" timestamp="1583938805300">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="342" key="GridCell.Tab.0.bottom/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583186189393" />
     <state width="1807" height="342" key="GridCell.Tab.0.bottom/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583158766580" />
-    <state width="1807" height="342" key="GridCell.Tab.0.center" timestamp="1583186189393">
-      <screen x="0" y="27" width="1440" height="873" />
+    <state width="1807" height="277" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583938805300" />
+    <state width="1807" height="277" key="GridCell.Tab.0.center" timestamp="1583938805299">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="342" key="GridCell.Tab.0.center/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583186189393" />
     <state width="1807" height="342" key="GridCell.Tab.0.center/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583158766580" />
-    <state width="1807" height="342" key="GridCell.Tab.0.left" timestamp="1583186189393">
-      <screen x="0" y="27" width="1440" height="873" />
+    <state width="1807" height="277" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583938805299" />
+    <state width="1807" height="277" key="GridCell.Tab.0.left" timestamp="1583938805299">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="342" key="GridCell.Tab.0.left/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583186189393" />
     <state width="1807" height="342" key="GridCell.Tab.0.left/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583158766580" />
-    <state width="1807" height="342" key="GridCell.Tab.0.right" timestamp="1583186189393">
-      <screen x="0" y="27" width="1440" height="873" />
+    <state width="1807" height="277" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583938805299" />
+    <state width="1807" height="277" key="GridCell.Tab.0.right" timestamp="1583938805300">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="342" key="GridCell.Tab.0.right/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583186189393" />
     <state width="1807" height="342" key="GridCell.Tab.0.right/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583158766580" />
+    <state width="1807" height="277" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583938805300" />
     <state width="1807" height="342" key="GridCell.Tab.1.bottom" timestamp="1583186189393">
       <screen x="0" y="27" width="1440" height="873" />
     </state>
@@ -783,20 +822,22 @@
     </state>
     <state width="1807" height="342" key="GridCell.Tab.1.right/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583186189393" />
     <state width="1807" height="342" key="GridCell.Tab.1.right/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583158766580" />
-    <state x="1719" y="71" key="SettingsEditor" timestamp="1583763941187">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="585" y="27" key="SettingsEditor" timestamp="1583938375929">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="209" y="84" key="SettingsEditor/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583164934836" />
     <state x="1719" y="71" key="SettingsEditor/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583763941187" />
+    <state x="585" y="27" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1583938375929" />
     <state x="2028" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1583321698661">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2028" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583321698661" />
-    <state x="1941" y="308" key="com.intellij.ide.util.TipDialog" timestamp="1583763538569">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="551" y="327" key="com.intellij.ide.util.TipDialog" timestamp="1584034993144">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="376" y="276" key="com.intellij.ide.util.TipDialog/1440.0.1920.1080/0.27.1440.873@0.27.1440.873" timestamp="1583145334224" />
     <state x="1941" y="308" key="com.intellij.ide.util.TipDialog/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583763538569" />
+    <state x="551" y="327" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1584034993144" />
     <state x="2201" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583254355434">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
@@ -809,9 +850,13 @@
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2097" y="253" key="run.anything.popup/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583322078705" />
-    <state x="2096" y="257" key="search.everywhere.popup" timestamp="1583323181022">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="700" y="278" key="search.everywhere.popup" timestamp="1583926450947">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="2096" y="257" key="search.everywhere.popup/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1583323181022" />
+    <state x="700" y="278" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1583926450947" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MTT$DummieTargetGenerator.coverage" NAME="DummieTargetGenerator Coverage Results" MODIFIED="1583938378262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/velocityobstacle/src" />
   </component>
 </project>

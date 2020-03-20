@@ -8,13 +8,13 @@
 
 <!-- 		<remap from="/laserscan0" to="/atc/laser/left_bumper/laser_scan"/> -->
 <!-- 		<remap from="/laserscan1" to="/atc/laser/right_bumper/laser_scan"/> -->
-		<remap from="/laserscan0" to="/snr/las/2/scan"/>
-		<remap from="/laserscan1" to="/snr/las/3/scan"/>
+		<remap from="/laserscan1" to="/left_laser/laserscan"/>
+		<remap from="/laserscan2" to="/right_laser/laserscan"/>
 			
-		<remap from="/tracking_frame" to="/atc/vehicle/center_bumper"/> 
+		<remap from="/tracking_frame" to="/base_link"/> 
 		<remap from="/pc_out" to="/pcp/fus/planar_pc/points"/>
 		
-		<node name="planar_pc" pkg="mtt" type="simple_planar_pc_generator">
+		<node name="planar_pc" pkg="mtt" type="simple_planar_pc_generator" output="screen">
 			<param name="output_frequency" value="200.0"/>
 			<param name="perpendicular_treshold" value="0.15"/>
 		</node>

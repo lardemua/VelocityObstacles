@@ -905,7 +905,8 @@ class GNN
                 out_target.finalpose.y = target->points[target->points.size()-1]->y;
                 out_target.finalpose.z = 0;
                 
-                out_target.size = target->length;
+                // out_target.size = target->length;
+                out_target.size = target->points.size();
                 out_target.radius = target->radius;
                 
                 target_list.Targets.push_back(out_target);
@@ -949,13 +950,50 @@ class GNN
             marker_centers.colors.resize(targets.size());
                 
             marker_centers.id = 0;
+
+            // Marker_line
+            visualization_msgs::Marker marker_line;
+
+            marker_line.header.frame_id = tracking_frame;
+            marker_line.header.stamp = marker_centers.header.stamp;
+            marker_line.ns = "line";
+            marker_line.action = visualization_msgs::Marker::ADD;
+            marker_line.type = visualization_msgs::Marker::LINE_STRIP;
+        
+	        marker_line.pose.position.x=0;
+	        marker_line.pose.position.y=0;
+	        marker_line.pose.position.z=0;
+        
+	        marker_line.scale.x = 0.02; 
+	        // marker_line.scale.y = 0.1; 
+	        // marker_line.scale.z = 0.1; 
             
             for(int i=0;i<targets.size();i++)
             {
                 Target::Ptr target = targets[i];
-                visualization_msgs::Marker ellipse;
+                // Marker_line
 
-                
+                marker_line.color = colormap.color(target->id);
+
+		        geometry_msgs::Point p;
+		        p.z = 0.1;
+
+		        marker_line.points.clear();
+
+		        uint l;
+		        for(l=0;l<target->points.size();l++)
+		        {
+		        	p.x = target->points[l]->x;
+		        	p.y = target->points[l]->y;
+
+		        	marker_line.points.push_back(p);
+		        }
+
+
+                marker_line.id = target->id;
+                marker_list.update(marker_line);
+
+                visualization_msgs::Marker ellipse;              
 
                 ellipse = makeEllipse(target->centroid,target->radius,target->radius,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
                 ellipse.header.frame_id = tracking_frame;
@@ -990,74 +1028,99 @@ class GNN
             
             //Create a color map
             class_colormap colormap("hsv",10, 1, false);
-            
+
+            // Marker_id - Display the ID of the target
             visualization_msgs::Marker marker_ids;
-            visualization_msgs::Marker marker_centers;
-            visualization_msgs::Marker marker_velocity;
-            visualization_msgs::Marker marker_association;
-            
+
             marker_ids.header.frame_id = tracking_frame;
             marker_ids.header.stamp = ros::Time::now();
-            
-            marker_centers.header.frame_id = tracking_frame;
-            marker_centers.header.stamp = marker_ids.header.stamp;
-            
-            marker_velocity.header.frame_id = tracking_frame;
-            marker_velocity.header.stamp = marker_ids.header.stamp;
-            
-            marker_association.header.frame_id = tracking_frame;
-            marker_association.header.stamp = marker_ids.header.stamp;
-            
             marker_ids.ns = "ids";
             marker_ids.action = visualization_msgs::Marker::ADD;
-            
-            marker_centers.ns = "target_centers";
-            marker_centers.action = visualization_msgs::Marker::ADD;
-            
-            marker_velocity.ns = "velocity";
-            marker_velocity.action = visualization_msgs::Marker::ADD;
-            
-            marker_association.ns = "associations";
-            marker_association.action = visualization_msgs::Marker::ADD;
-            
             marker_ids.type = visualization_msgs::Marker::TEXT_VIEW_FACING;
-            marker_centers.type = visualization_msgs::Marker::POINTS;
-            marker_velocity.type = visualization_msgs::Marker::ARROW;
-            marker_association.type = visualization_msgs::Marker::LINE_LIST;
-            
+
             marker_ids.scale.x = 0.5; 
             marker_ids.scale.y = 0.5; 
             marker_ids.scale.z = 0.5; 
 
-            marker_centers.scale.x = 0.4; 
-            marker_centers.scale.y = 0.4;
-            marker_centers.scale.z = 0.4;
-            
-            marker_velocity.scale.x = 0.2;
-            marker_velocity.scale.y = 0.3;
-            marker_velocity.scale.z = 0.4;
-            
-            marker_association.scale.x = 0.2;
-            
-            marker_centers.color.r = 0;
-            marker_centers.color.g = 0; 
-            marker_centers.color.b = 0; 
-            marker_centers.color.a = 1; 
-            
             marker_ids.color.r=0;
             marker_ids.color.g=0;
             marker_ids.color.b=0;
             marker_ids.color.a=1;
+
+            
+            
+            // Marker_centers - Display of the center of the targets
+            visualization_msgs::Marker marker_centers;
+
+            marker_centers.header.frame_id = tracking_frame;
+            marker_centers.header.stamp = marker_ids.header.stamp;
+            marker_centers.ns = "target_centers";
+            marker_centers.action = visualization_msgs::Marker::ADD;
+            marker_centers.type = visualization_msgs::Marker::POINTS;
+
+            marker_centers.scale.x = 0.2; 
+            marker_centers.scale.y = 0.2;
+            marker_centers.scale.z = 0.2;
+
+            marker_centers.color.r = 0;
+            marker_centers.color.g = 0; 
+            marker_centers.color.b = 0; 
+            marker_centers.color.a = 1; 
+
+            marker_centers.points.resize(targets.size());
+            marker_centers.colors.resize(targets.size());
+                
+            marker_centers.id = 0;
+            
+
+           // Marker_line
+            visualization_msgs::Marker marker_line;
+
+            marker_line.header.frame_id = tracking_frame;
+            marker_line.header.stamp = marker_ids.header.stamp;
+            marker_line.ns = "line";
+            marker_line.action = visualization_msgs::Marker::ADD;
+            marker_line.type = visualization_msgs::Marker::LINE_STRIP;
+        
+	        marker_line.pose.position.x=0;
+	        marker_line.pose.position.y=0;
+	        marker_line.pose.position.z=0;
+        
+	        marker_line.scale.x = 0.02; 
+	        // marker_line.scale.y = 0.1; 
+	        // marker_line.scale.z = 0.1; 
+            
+
+            // Marker velocity - Display an arrow of the velocity
+            visualization_msgs::Marker marker_velocity;
+
+            marker_velocity.header.frame_id = tracking_frame;
+            marker_velocity.header.stamp = marker_ids.header.stamp;
+            marker_velocity.ns = "velocity";
+            marker_velocity.action = visualization_msgs::Marker::ADD;
+            marker_velocity.type = visualization_msgs::Marker::ARROW;
+
+            marker_velocity.scale.x = 0.2;
+            marker_velocity.scale.y = 0.3;
+            marker_velocity.scale.z = 0.4;
+
+            /**
+            // Marker_association - Displays a line between the estimated position and the measured position
+
+            visualization_msgs::Marker marker_association;
+            marker_association.header.frame_id = tracking_frame;
+            marker_association.header.stamp = marker_ids.header.stamp;
+            marker_association.ns = "associations";
+            marker_association.action = visualization_msgs::Marker::ADD;
+            marker_association.type = visualization_msgs::Marker::LINE_LIST;
+            
+            marker_association.scale.x = 0.2;
             
             marker_association.color.r = 0;
             marker_association.color.g = 0; 
             marker_association.color.b = 0; 
             marker_association.color.a = 1; 
-            
-            marker_centers.points.resize(targets.size());
-            marker_centers.colors.resize(targets.size());
-                
-            marker_centers.id = 0;
+            **/
             
             double velocity_scale=0.5;
             
@@ -1066,6 +1129,12 @@ class GNN
                 Target::Ptr target = targets[i];
                 
                 double velocity = target->estimated_velocity.module();
+
+                
+
+
+
+                // Marker_center
                 
                 marker_centers.colors[i] = colormap.color(target->id);
                 
@@ -1073,9 +1142,12 @@ class GNN
                 marker_centers.points[i].y = target->estimated_position.y;
                 marker_centers.points[i].z = 0.0;
                 
+
+                // Marker ID
                 marker_ids.pose.position.x = target->estimated_position.x;
                 marker_ids.pose.position.y = target->estimated_position.y;
                 marker_ids.pose.position.z = 1.0;
+                marker_ids.color = colormap.color(target->id);
                 
                 boost::format fm("%ld");
                 fm % target->id;
@@ -1083,9 +1155,33 @@ class GNN
                 marker_ids.text = fm.str();
                 
                 marker_ids.id = target->id;
-                
                 marker_list.update(marker_ids);
+
                 
+
+                // Marker_line
+                if(target->points.size()> 1)
+                {
+                marker_line.color = colormap.color(target->id);
+
+		        geometry_msgs::Point p;
+		        p.z = 0.1;
+
+		        marker_line.points.clear();
+
+		        uint l;
+		        for(l=0;l<target->points.size();l++)
+		        {
+		        	p.x = target->points[l]->x;
+		        	p.y = target->points[l]->y;
+
+		        	marker_line.points.push_back(p);
+		        }
+
+                marker_line.id = target->id;
+                marker_list.update(marker_line);
+                }
+                // Marker Velocity
                 if(velocity>0.1)
                 {
                     marker_velocity.points.clear();
@@ -1099,17 +1195,19 @@ class GNN
                     
                     marker_velocity.points[1].x = target->estimated_position.x + target->estimated_velocity.module()*cos(target->estimated_velocity.angle())*velocity_scale;
                     marker_velocity.points[1].y = target->estimated_position.y + target->estimated_velocity.module()*sin(target->estimated_velocity.angle())*velocity_scale;
-                    
                     marker_velocity.points[1].z = 0.0;
                     
                     marker_velocity.id=target->id;
                     
                     marker_list.update(marker_velocity);
                 }
-                
-                //Gatting ellipse, not working now
+                /**
+                //Marker Ellipse
+                // Ellipse of the search area
                 //visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,target->search_area.ellipse_A,target->search_area.ellipse_B,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
+                // Radius of the target
                 visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,target->radius,target->radius,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
+                // Fixed Ellipse
                 // visualization_msgs::Marker ellipse = makeEllipse(target->predicted_position,0.5,0.4,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
                 
                 ellipse.header.frame_id = tracking_frame;
@@ -1133,10 +1231,11 @@ class GNN
                 
                 marker_association.colors.push_back(colormap.color(target->id));
                 marker_association.colors.push_back(colormap.color(target->id));
+                **/
             }
             
             marker_list.update(marker_centers);
-            marker_list.update(marker_association);
+            // marker_list.update(marker_association);
             
             //Remove markers that should not be transmitted
             marker_list.clean();
@@ -1201,11 +1300,12 @@ class GNN
                         min_dist=dist;
                     }
                 }
-                
+                // cout << "ID: " << target->id << "Target size: " << target->points.size()<<endl;
                 //Exclusion zone B
                 if(min_dist < ezB && closest_existing_target->life_time > target->life_time)
                 {
                     //do not associate
+                    // cout << "Not associated - "<< "ID: " << target->id << "Target size: " << target->points.size()<<endl;
                 }else
                 {
                     measurement->found = true;
@@ -1255,7 +1355,7 @@ class GNN
                 }
                 
                 //Exclusion zone A
-                if(min_distance_to_existing_object < ezA && first_iteration == false)
+                if(min_distance_to_existing_object < ezA && first_iteration == false && measurement->points.size()<10)
                     continue;
                 
                 if(measurement->found==false)
@@ -1274,22 +1374,33 @@ class GNN
 //             cout<<"to local format"<<endl;
             //Get local data format
             vector<Point::Ptr> data;
-            pointCloudToVector(msg,data);
-//             cout<<"data points: "<<data.size()<<endl;
+            pointCloudToVector(msg,data); //Vetor com os pontos todos detetados
+            cout<<"data points: "<<data.size()<<endl;
             
 //             cout<<"clustering"<<endl;
             //Cluster data to produce the current list of targets
             vector<Target::Ptr> current_targets;
             clustering(data,current_targets,clustering_distance);
             
-//             cout<<"current targets size: "<<current_targets.size()<<endl;
+            cout<<"current targets size: "<<current_targets.size()<<endl;
+            int erasedcounter = 0;
+            for(uint i=0; i<current_targets.size(); i++)
+            {   
+                if (current_targets[i]->points.size()<5)
+                    {
+                        current_targets.erase(current_targets.begin()+i);
+                        erasedcounter++;
+                        // cout<<"Erasing:  "<< i <<". "<< current_targets.size() <<" left"<< endl;
+                    }
+            }
             
-//             cout<<"association"<<endl;
+            cout<< "Erased: " << erasedcounter << "Got: " << current_targets.size() << endl;
+            // cout<<"association"<<endl;
             
             //Associate current targets with previous existing targets
             hungarianMatching(targets,current_targets);
 //             associateTargets(current_targets,targets);
-//             cout<<"global targets: "<<targets.size()<<endl;
+            cout<<"global targets: "<<targets.size()<<endl;
             
 //             cout<<"step models"<<endl;
             
