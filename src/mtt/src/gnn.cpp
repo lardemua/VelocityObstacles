@@ -444,6 +444,15 @@ class Target
                 if(p->r<rmin)
                     rmin = p->r;
                 
+                if(p->r>rmax)
+                    rmax = p->r;
+
+                if(p->t>tmax)
+                    tmax = p->t;
+                
+                if(p->t<tmin)
+                    tmin = p->t;
+                
             }
             
             tm = (points[0]->t+points[points.size()-1]->t)/2.;
@@ -452,10 +461,8 @@ class Target
             centroid.x = xsum/points.size();
             centroid.y = ysum/points.size();
 
-            // Determina o raio do target atraves da distancia do primeiro ate ao centroid
-            radius = sqrt(pow(centroid.x-points[0]->x,2)+pow(centroid.y-points[0]->y,2));
-            // cout<<"Calculating radius. Got: "<<radius<<endl;
-            
+            size = sqrt(pow(points[points.size()-1]->x-points[0]->x,2)+pow(points[points.size()-1]->y-points[0]->y,2));
+            // cout << "rmin: "<< rmin<<" rmax: "<<rmax<<endl;
         }
         
 
@@ -533,7 +540,7 @@ class Target
         MotionModel motion_model;
         
         bool occluded;
-        double rmin,tm,radius;
+        double rmin,rmax,tmin,tmax,tm,size;
         long id;
         long local_id;
         
@@ -587,11 +594,14 @@ class GNN
             size_factor = parameters["size_factor"];
             not_found_factor = parameters["not_found_factor"];
             clustering_distance = parameters["clustering_distance"];
+            TargetMinNumberOfPoints = parameters["TargetMinNumberOfPoints"];
+            TargetMinSize = parameters["TargetMinSize"];
+
         }
         
         ~GNN()
         {}
-        
+
         void pointCloudToVector(const sensor_msgs::PointCloud2& cloud,vector<Point::Ptr>& data)
         {
             pcl::PointCloud<pcl::PointXYZ> pcl_cloud;
@@ -649,9 +659,10 @@ class GNN
                 //Go though all the other points and see which ones associate with this measurement
                 recursiveAssociation(data,point_association,clustering_distance,p);
             }
-            
             for(uint m=0;m<current_targets.size();m++)
                 current_targets[m]->calculateProperties();
+                
+
         }
         
         void recursiveAssociation(const vector<Point::Ptr> data,vector<pair<Target::Ptr,bool> >& point_association,double clustering_distance, uint p)
@@ -880,7 +891,7 @@ class GNN
             {
                 //structure to be fed to array
                 mtt::Target out_target;
-//                cout << "create Output Targets" << endl;
+                // cout << "create Output Targets" << endl;
                 //build header
                 out_target.header.stamp = ros::Time::now();
                 out_target.header.frame_id = frame_id;
@@ -906,8 +917,8 @@ class GNN
                 out_target.finalpose.z = 0;
                 
                 // out_target.size = target->length;
-                out_target.size = target->points.size();
-                out_target.radius = target->radius;
+                out_target.size = target->size;
+                // out_target.radius = target->radius;
                 
                 target_list.Targets.push_back(out_target);
             }
@@ -951,54 +962,17 @@ class GNN
                 
             marker_centers.id = 0;
 
-            // Marker_line
-            visualization_msgs::Marker marker_line;
-
-            marker_line.header.frame_id = tracking_frame;
-            marker_line.header.stamp = marker_centers.header.stamp;
-            marker_line.ns = "line";
-            marker_line.action = visualization_msgs::Marker::ADD;
-            marker_line.type = visualization_msgs::Marker::LINE_STRIP;
-        
-	        marker_line.pose.position.x=0;
-	        marker_line.pose.position.y=0;
-	        marker_line.pose.position.z=0;
-        
-	        marker_line.scale.x = 0.02; 
-	        // marker_line.scale.y = 0.1; 
-	        // marker_line.scale.z = 0.1; 
             
             for(int i=0;i<targets.size();i++)
             {
                 Target::Ptr target = targets[i];
-                // Marker_line
 
-                marker_line.color = colormap.color(target->id);
+                // visualization_msgs::Marker ellipse;              
 
-		        geometry_msgs::Point p;
-		        p.z = 0.1;
-
-		        marker_line.points.clear();
-
-		        uint l;
-		        for(l=0;l<target->points.size();l++)
-		        {
-		        	p.x = target->points[l]->x;
-		        	p.y = target->points[l]->y;
-
-		        	marker_line.points.push_back(p);
-		        }
-
-
-                marker_line.id = target->id;
-                marker_list.update(marker_line);
-
-                visualization_msgs::Marker ellipse;              
-
-                ellipse = makeEllipse(target->centroid,target->radius,target->radius,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
-                ellipse.header.frame_id = tracking_frame;
-                ellipse.header.stamp = ros::Time::now();
-                marker_list.update(ellipse);
+                // ellipse = makeEllipse(target->centroid,target->radius,target->radius,target->search_area.angle,"simple_marker",colormap.color(target->id),target->id);
+                // ellipse.header.frame_id = tracking_frame;
+                // ellipse.header.stamp = ros::Time::now();
+                // marker_list.update(ellipse);
                 
                 marker_centers.colors[i] = colormap.color(5);
                 
@@ -1009,7 +983,6 @@ class GNN
             
             marker_list.update(marker_centers);
 
-            
             //Remove markers that should not be transmitted
             marker_list.clean();
             
@@ -1244,8 +1217,25 @@ class GNN
             return marker_list.getOutgoingMarkers();
         }
         
-        void hungarianMatching(vector<Target::Ptr>& targets,vector<Target::Ptr>& measurements)
+        void hungarianMatching(vector<Target::Ptr>& targets,vector<Target::Ptr>& current_targets)
         {
+            vector<Target::Ptr> measurements;
+            uint erasedcounter=0;
+
+            for(uint m=0;m<current_targets.size();m++)
+            {
+                if(current_targets[m]->points.size()< TargetMinNumberOfPoints || current_targets[m]->size < TargetMinSize)
+                {
+                    erasedcounter++;
+                    continue;
+                }
+                measurements.push_back(current_targets[m]);
+
+            }
+            
+            
+            
+            
             for(Target::Ptr target: targets)
             {
                 target->found = false;
@@ -1311,6 +1301,7 @@ class GNN
                     measurement->found = true;
                     target->found = true;
                     target->associate(measurement);
+                    target->points = measurement->points;
                 }
             }
    
@@ -1366,48 +1357,40 @@ class GNN
 
         void pointsHandler(const sensor_msgs::PointCloud2& msg)
         {
-             cout<<"received points"<<endl;
+            //  cout<<"received points"<<endl;
             
             //Get frame of current point cloud
             frame_id = msg.header.frame_id;
-            
-//             cout<<"to local format"<<endl;
+
+            // cout<<"to local format"<<endl;
             //Get local data format
             vector<Point::Ptr> data;
             pointCloudToVector(msg,data); //Vetor com os pontos todos detetados
-            cout<<"data points: "<<data.size()<<endl;
+            // cout<<"data points: "<<data.size()<<endl;
             
-//             cout<<"clustering"<<endl;
+            // cout<<"clustering"<<endl;
             //Cluster data to produce the current list of targets
             vector<Target::Ptr> current_targets;
             clustering(data,current_targets,clustering_distance);
-            
-            cout<<"current targets size: "<<current_targets.size()<<endl;
-            int erasedcounter = 0;
-            for(uint i=0; i<current_targets.size(); i++)
-            {   
-                if (current_targets[i]->points.size()<5)
-                    {
-                        current_targets.erase(current_targets.begin()+i);
-                        erasedcounter++;
-                        // cout<<"Erasing:  "<< i <<". "<< current_targets.size() <<" left"<< endl;
-                    }
-            }
-            
-            cout<< "Erased: " << erasedcounter << "Got: " << current_targets.size() << endl;
+                
+
+
+
+
+            // cout<<"current targets size: "<<current_targets.size()<<endl;
             // cout<<"association"<<endl;
             
             //Associate current targets with previous existing targets
             hungarianMatching(targets,current_targets);
-//             associateTargets(current_targets,targets);
-            cout<<"global targets: "<<targets.size()<<endl;
+            // associateTargets(current_targets,targets);
+            // cout<<"global targets: "<<targets.size()<<endl;
             
-//             cout<<"step models"<<endl;
+            // cout<<"step models"<<endl;
             
             //Update Motion models
             stepModels(targets);
-            
-//             cout<<"update search areas"<<endl;
+
+            // cout<<"update search areas"<<endl;
             
             //Update search areas
             updateSearchAreas(targets);
@@ -1445,6 +1428,8 @@ class GNN
         int max_missing_iterations;
         bool first_iteration;
         double clustering_distance;
+        int TargetMinNumberOfPoints;
+        float TargetMinSize;
         string frame_id;
         
         ros::NodeHandle nh;

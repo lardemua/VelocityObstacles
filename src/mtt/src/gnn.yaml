@@ -10,3 +10,7 @@ min_ellipse_axis: 0.2
 
 size_factor: 0.1
 not_found_factor: 0.1
+
+TargetMinSize: 0.4
+TargetMinNumberOfPoints: 4
+
