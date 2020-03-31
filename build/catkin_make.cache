@@ -1,2 +1,0 @@
-colormap:kfilter:mtt:velocityobstacle
--DCATKIN_DEVEL_PREFIX=/home/ruic7/MTT/devel -DCMAKE_INSTALL_PREFIX=/home/ruic7/MTT/install -G Unix Makefiles
