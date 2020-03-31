@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- This starts the laser tracking with the simple gnn mtt algorithm-->
+    
+<!--    <group ns="laser_2">
+        <node name="laser_2" pkg="lms1xx" type="lms1xx">
+            <param name="host" value="10.0.0.11"/>
+            <param name="frame_id" value="/laser_2"/>
+        </node>
+    </group>-->
+
+    <remap from="/laserscan1" to="/left_laser/laserscan"/>
+    <remap from="/laserscan2" to="/right_laser/laserscan"/>
+
+    <remap from="/tracking_frame" to="/left_laser"/>
+    <remap from="/pc_out" to="/laser/points"/>
+
+    <node name="planar_pc" pkg="mtt" type="simple_planar_pc_generator">
+        <param name="output_frequency" value="100.0"/>
+        <param name="perpendicular_treshold" value="0.15"/>
+        <param name="wait_for_laser_1" value="true"/>
+        <param name="wait_for_laser_2" value="true"/>
+    </node>
+    
+    <remap from="/points" to="/laser/points"/>
+    
+    <node name="gnn" pkg="mtt" type="gnn" output="screen">
+        <param name="parameters" value="package://mtt/src/gnn.yaml"/>
+        <param name="perpendicular_treshold" value="0.15"/>
+    </node>
+    
+</launch>
