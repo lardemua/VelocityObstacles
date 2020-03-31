@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- This starts the Velocity Obstacles with the GNN and simple planar pc generator-->
+    
+
+    <remap from="/laserscan1" to="/left_laser/laserscan"/>
+    <remap from="/laserscan2" to="/right_laser/laserscan"/>
+
+    <remap from="/tracking_frame" to="/left_laser"/>
+    <remap from="/pc_out" to="/laser/points"/>
+
+    <node name="planar_pc" pkg="mtt" type="simple_planar_pc_generator">
+        <param name="output_frequency" value="100.0"/>
+        <param name="perpendicular_treshold" value="0.15"/>
+        <param name="wait_for_laser_1" value="true"/>
+        <param name="wait_for_laser_2" value="true"/>
+    </node>
+    
+    <remap from="/points" to="/laser/points"/>
+    
+    <node name="gnn" pkg="mtt" type="gnn" output="screen">
+        <param name="parameters" value="package://mtt/src/gnn.yaml"/>
+        <param name="perpendicular_treshold" value="0.15"/>
+    </node>
+
+    <node name="vo" pkg="velocityobstacle" type="vo.py" output="screen">
+    </node>
+
+    <!-- Launch rviz with the propper parameters for loading the atlascar rviz configuration file if argument SHOW is 1-->
+	<remap from="/tf" to="/trf/frames"/>
+    <node name="rviz" pkg="rviz" type="rviz" output="screen" if="$(arg show)"
+		args="--display-config $(find velocityobstacle)/rvizconfig/view_vcones.rviz"/>
+    
+</launch>
