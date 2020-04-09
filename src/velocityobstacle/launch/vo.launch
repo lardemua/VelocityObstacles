@@ -2,7 +2,6 @@
 <launch>
     <!-- This starts the Velocity Obstacles with the GNN and simple planar pc generator-->
     
-
     <remap from="/laserscan1" to="/left_laser/laserscan"/>
     <remap from="/laserscan2" to="/right_laser/laserscan"/>
 

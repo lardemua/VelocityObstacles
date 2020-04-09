@@ -338,6 +338,7 @@ class MotionModel: public Kalman::EKFilter<double,0,false,false,false>
             H(1,1) = 1;
         }
         
+        
         void makeBaseW()
         {
             setIdentity(W,4,1.0);

@@ -1,95 +1,122 @@
 #!/usr/bin/env python
+import time
+
 import rospy
 import numpy
-import math
 import tf
-from geometry_msgs.msg import Point, Twist, Quaternion, Vector3
+from geometry_msgs.msg import Point, PointStamped, PoseStamped, Vector3Stamped
 from mtt.msg import TargetList
+from velocityobstacle.msg import CollisionList, Collision
 from visualization_msgs.msg import Marker, MarkerArray
 
 
 def EuclideanDistance(point1,point2):
         return numpy.sqrt(pow(point1.x-point2.x,2)+pow(point1.y-point2.y,2))
 
-def TransformMatrixBaseLink(tf_listener, target_name, my_name = "base_link",
-                                    time=rospy.Time(0), max_time_to_wait=1.0):
-
-    try:
-        tf_listener.waitForTransform(my_name, target_name, time, rospy.Duration(max_time_to_wait))
-        (trans, rot) = tf_listener.lookupTransform(my_name, target_name, time)
-
-    except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException, tf.Exception):
-        rospy.logwarn(my_name + ': Could not get transform from ' + my_name + ' to ' + target_name)
-        return None
-
-    matrix_trans = tf.transformations.translation_matrix((trans[0],
-                                                          trans[1],
-                                                          0))
-
-    matrix_rot = tf.transformations.quaternion_matrix((rot[0],
-                                                       rot[1],
-                                                       rot[2],
-                                                       rot[3]))
-
-    MatrixBaseLink = numpy.matmul(matrix_trans,matrix_rot)
-
-    return MatrixBaseLink
-
-
 
 class Target:
 
-    def CalculateTransformedPoints(self, MatrixBaseLink):
-        # MUDAR ISTO PARA USAR transformPoint e transformPose
-
-        translationmatrix_centroid = tf.transformations.translation_matrix((self.centroid.position.x, self.centroid.position.y, self.centroid.position.z))
-        translationmatrix_firstpoint = tf.transformations.translation_matrix((self.firstpoint.x, self.firstpoint.y, self.firstpoint.z))
-        translationmatrix_lastpoint = tf.transformations.translation_matrix((self.lastpoint.x, self.lastpoint.y, self.lastpoint.z))
-        translationmatrix_velocity = tf.transformations.translation_matrix((self.velocity.linear.x, self.velocity.linear.y, self.velocity.linear.z))
+    def CreateStampedObject(self,object):
+        if object._type == "geometry_msgs/Pose":
+            stampedObject = PoseStamped()
+            stampedObject.pose = object
 
 
-        rotmatrix_centroid = tf.transformations.quaternion_matrix((self.centroid.orientation.x, self.centroid.orientation.y, self.centroid.orientation.z, self.centroid.orientation.w))
+        elif object._type == "geometry_msgs/Point":
+            stampedObject = PointStamped()
+            stampedObject.point = object
 
-        matrix_centroid   = numpy.matmul(translationmatrix_centroid, rotmatrix_centroid)
-
-        newmatrix_centroid = numpy.matmul(MatrixBaseLink, matrix_centroid)
-        newmatrix_firstpoint = numpy.matmul(MatrixBaseLink, translationmatrix_firstpoint)
-        newmatrix_lastpoint = numpy.matmul(MatrixBaseLink, translationmatrix_lastpoint)
-        newmatrix_velocity = numpy.matmul(MatrixBaseLink, translationmatrix_velocity)
-
-        translationcentroid = tf.transformations.translation_from_matrix(newmatrix_centroid)
-        translationfirstpoint = tf.transformations.translation_from_matrix(newmatrix_firstpoint)
-        translationlastpoint = tf.transformations.translation_from_matrix(newmatrix_lastpoint)
-        translationvelocity = tf.transformations.translation_from_matrix(newmatrix_velocity)
-
-        rotcentroid = tf.transformations.quaternion_from_matrix(newmatrix_centroid)
-
-        self.centroid.orientation = Quaternion(rotcentroid[0],rotcentroid[1],rotcentroid[2],rotcentroid[3])
-        self.centroid.position = Point(translationcentroid[0],translationcentroid[1],translationcentroid[2])
-
-        self.firstpoint = Point(translationfirstpoint[0],translationfirstpoint[1],translationfirstpoint[2])
-        self.lastpoint = Point(translationlastpoint[0],translationlastpoint[1],translationlastpoint[2])
-
-        self.velocity.linear = Vector3(translationvelocity[0], translationvelocity[1], translationvelocity[2])
+        elif object._type == "geometry_msgs/Vector3":
+            stampedObject = Vector3Stamped()
+            stampedObject.vector = object
+        else:
+            rospy.logwarn("msg type not found")
+            return
 
 
-    def __init__(self,alvo,cardiameter, MatrixBaseLink):
+
+
+
+        stampedObject.header.frame_id = self.frame_id
+        stampedObject.header.stamp = rospy.Time.now()
+
+        return stampedObject
+
+    def CalculateTransformedPoints(self):
+
+        tf_listener=tf.TransformListener()
+        tf_listener.waitForTransform(self.frame_id,"base_link",rospy.Time(0),rospy.Duration(4.0))
+
+
+        Stamped_firstpoint = self.CreateStampedObject(self.firstpoint)
+        Stamped_lastpoint = self.CreateStampedObject(self.lastpoint)
+        Stamped_centroid = self.CreateStampedObject(self.centroid)
+        Stamped_velocity = self.CreateStampedObject(self.velocity.linear)
+
+
+
+        Stamped_velocity = tf_listener.transformVector3("base_link", Stamped_velocity)
+        Stamped_firstpoint = tf_listener.transformPoint("base_link", Stamped_firstpoint)
+        Stamped_lastpoint = tf_listener.transformPoint("base_link", Stamped_lastpoint)
+        Stamped_centroid = tf_listener.transformPose("base_link", Stamped_centroid)
+
+        self.centroid = Stamped_centroid.pose
+        self.firstpoint = Stamped_firstpoint.point
+        self.lastpoint = Stamped_lastpoint.point
+        self.velocity.linear = Stamped_velocity.vector
+
+
+    def CalculateTangentPoints(self):
+        target = self.centroid.position
+        self.tangentpoint1 = Point()
+        self.tangentpoint2 = Point()
+        self.apex_point = Point()
+        self.apex_point.x = 0.0
+        self.apex_point.y = 0.0
+        self.apex_point.z = 0.0
+
+        target2car = EuclideanDistance(target,self.apex_point)
+        targetradius = self.vcdiameter/2
+
+        car2tangent = numpy.sqrt(pow(target2car,2)-pow(targetradius,2))
+
+        tangent2target_angle = numpy.arcsin(targetradius/target2car)
+        target2car_angle = numpy.arctan2(target.y-self.apex_point.y, target.x-self.apex_point.x)
+        self.tangent2car_angle = target2car_angle + tangent2target_angle
+        self.tangent2car_angle2 = target2car_angle - tangent2target_angle
+
+
+        self.tangentpoint2.x = numpy.cos(self.tangent2car_angle2)*car2tangent
+        self.tangentpoint2.y = numpy.sin(self.tangent2car_angle2)*car2tangent
+        self.tangentpoint2.z = 0
+
+        self.tangentpoint1.x = numpy.cos(self.tangent2car_angle) * car2tangent
+        self.tangentpoint1.y = numpy.sin(self.tangent2car_angle) * car2tangent
+        self.tangentpoint1.z = 0
+
+    def AbsoluteVelocityPoints(self):
+
+        self.apex_point.x , self.apex_point.y , self.apex_point.z = self.apex_point.x + self.velocity.linear.x, self.apex_point.y + self.velocity.linear.y, self.apex_point.z + self.velocity.linear.z
+        self.tangentpoint1.x , self.tangentpoint1.y, self.tangentpoint1.z  = self.tangentpoint1.x + self.velocity.linear.x, self.tangentpoint1.y + self.velocity.linear.y, self.tangentpoint1.z + self.velocity.linear.z
+        self.tangentpoint2.x , self.tangentpoint2.y, self.tangentpoint2.z  = self.tangentpoint2.x + self.velocity.linear.x, self.tangentpoint2.y + self.velocity.linear.y, self.tangentpoint2.z + self.velocity.linear.z
+
+    def __init__(self,alvo,cardiameter):
 
         self.frame_id = alvo.header.frame_id
         self.id = alvo.id
 
+        self.collision = False
         self.velocity = alvo.velocity
         self.centroid = alvo.pose
         self.firstpoint = alvo.initialpose
         self.lastpoint = alvo.finalpose
 
-        self.CalculateTransformedPoints(MatrixBaseLink)
+        self.CalculateTransformedPoints()
 
         self.targetdiameter = EuclideanDistance(self.lastpoint,self.firstpoint)
-
         self.vcdiameter = cardiameter+self.targetdiameter
 
-
+        self.CalculateTangentPoints()
 
 
 class Markers:
@@ -100,9 +127,9 @@ class Markers:
                 break
         markerlist.markers.append(marker)
 
-    def clean(self, markerlist,targetlist):
+    def clean(self, markerlist,targetidlist):
         for i in markerlist.markers:
-            if i.id not in targetlist:
+            if i.id not in targetidlist:
                 i.action = Marker.DELETE
 
     def colorupdate(self, marker, colorlist):
@@ -112,34 +139,7 @@ class Markers:
                 marker.color.a = 0.6
                 break
 
-
     def MakeCone(self,Target):
-        target = Target.centroid.position
-        first_point = Point()
-        second_point = Point()
-        car_point = Point()
-        car_point.x = 0.0
-        car_point.y = 0.0
-        car_point.z = 0.0
-
-        target2car = EuclideanDistance(target,car_point)
-        targetradius = Target.vcdiameter/2
-
-        car2tangent = numpy.sqrt(pow(target2car,2)-pow(targetradius,2))
-
-        tangent2target_angle = numpy.arcsin(targetradius/target2car)
-        target2car_angle = numpy.arctan2(target.y-car_point.y, target.x-car_point.x)
-        tangent2car_angle = target2car_angle - tangent2target_angle
-        tangent2car_angle2 = target2car_angle + tangent2target_angle
-
-
-        first_point.x = numpy.cos(tangent2car_angle)*car2tangent
-        first_point.y = numpy.sin(tangent2car_angle)*car2tangent
-        first_point.z = 0
-
-        second_point.x = numpy.cos(tangent2car_angle2) * car2tangent
-        second_point.y = numpy.sin(tangent2car_angle2) * car2tangent
-        second_point.z = 0
 
         cone = Marker(ns="Cone", id=Target.id, type=Marker.LINE_LIST, action=Marker.ADD)
         cone.header.frame_id = "base_link"
@@ -149,10 +149,10 @@ class Markers:
         cone.color.g = 0.0
         cone.color.b = 1.0
         cone.scale.x = 0.1
-        cone.points.append(first_point)
-        cone.points.append(car_point)
-        cone.points.append(second_point)
-        cone.points.append(car_point)
+        cone.points.append(Target.tangentpoint1)
+        cone.points.append(Target.apex_point)
+        cone.points.append(Target.tangentpoint2)
+        cone.points.append(Target.apex_point)
 
         return cone
 
@@ -174,21 +174,36 @@ class Markers:
         return circle
 
 
-
 class VO:
     def __init__(self):
-        self.tf_listener=tf.TransformListener()
-        self.MatrixBaseLink = TransformMatrixBaseLink(self.tf_listener,"left_laser")
 
         self.cardiameter=1.5
         self.marker_list = MarkerArray()
         self.Markers = Markers()
 
-        rospy.Subscriber("targets", TargetList, self.getDataCallback)
         rospy.Subscriber("targets_markers", MarkerArray, self.getColorMarker)
-        self.publisher_marker = rospy.Publisher('/cone', MarkerArray, queue_size=1000)
+        rospy.Subscriber("targets", TargetList, self.getDataCallback)
+        self.publisher_marker = rospy.Publisher('/cone', MarkerArray, queue_size=10)
+        self.publisher_collision = rospy.Publisher('/collision', CollisionList, queue_size=10)
 
 
+    def MakeCollisionTopic(self,target):
+        self.collision = Collision()
+        self.collision.header.stamp = rospy.Time.now()
+        self.collision.target = target.id
+        self.collision.colliding = target.collision
+
+
+
+    def ColisionCheck(self,target):
+
+        velocity_angle = abs(numpy.arctan2(-target.velocity.linear.y,-target.velocity.linear.x))
+        # print("vangle: " + str(velocity_angle))
+        # print("tg1: " + str(target.tangent2car_angle))
+        # print("tg2: " + str(target.tangent2car_angle2))
+        if velocity_angle < target.tangent2car_angle and velocity_angle > target.tangent2car_angle2:
+            target.collision = True
+            # print("Target: " + str(target.id) + " colliding")
 
 
     def getColorMarker(self,msg):
@@ -198,20 +213,29 @@ class VO:
 
 
     def getDataCallback(self, msg):
-        targetlist=[]
+        # timestart = time.time()
+        collisionlist = CollisionList()
+        targetIDlist=[]
+        targets = []
         for i in msg.Targets:
-            target = Target(i,self.cardiameter,self.MatrixBaseLink)
-            targetlist.append(target.id)
+            target = Target(i,self.cardiameter)
+            targets.append(target)
+            targetIDlist.append(target.id)
             cone = self.Markers.MakeCone(target)
             circle = self.Markers.MakeCircle(target)
 
             self.Markers.update(cone, self.marker_list)
             self.Markers.update(circle,self.marker_list)
-            self.Markers.colorupdate(circle,self.colormarker)
+            # self.Markers.colorupdate(circle,self.colormarker)
+            # self.Markers.colorupdate(cone, self.colormarker)
+            self.ColisionCheck(target)
+            self.MakeCollisionTopic(target)
+            collisionlist.collisions.append(self.collision)
 
-        self.Markers.clean(self.marker_list, targetlist)
+        self.Markers.clean(self.marker_list, targetIDlist)
         self.publisher_marker.publish(self.marker_list)
-
+        self.publisher_collision.publish(collisionlist)
+        # print(str(time.time()-timestart))
 
 if __name__ == '__main__':
     rospy.init_node('vo', anonymous=False)
