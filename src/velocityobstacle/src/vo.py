@@ -6,7 +6,7 @@ import numpy
 import tf
 from geometry_msgs.msg import Point, PointStamped, PoseStamped, Vector3Stamped
 from mtt.msg import TargetList
-from velocityobstacle.msg import CollisionList, Collision
+from velocityobstacle.msg import Collision, CollisionList
 from visualization_msgs.msg import Marker, MarkerArray
 
 
@@ -106,10 +106,13 @@ class Target:
         self.id = alvo.id
 
         self.collision = False
+        self.timetocollision = None
+
         self.velocity = alvo.velocity
         self.centroid = alvo.pose
         self.firstpoint = alvo.initialpose
         self.lastpoint = alvo.finalpose
+        self.minimumdistance = alvo.minimumdistance
 
         self.CalculateTransformedPoints()
 
@@ -117,9 +120,11 @@ class Target:
         self.vcdiameter = cardiameter+self.targetdiameter
 
         self.CalculateTangentPoints()
+        print("target: " +str(self.id) + " distance: " + str(numpy.sqrt(pow(self.centroid.position.x,2)+pow(self.centroid.position.y,2))) + " velocity: " + str(numpy.sqrt(pow(self.velocity.linear.x,2)+pow(self.velocity.linear.y,2))*3.6))
 
 
 class Markers:
+
     def update(self, marker, markerlist):
         for i in markerlist.markers:
             if i.ns == marker.ns and i.id == marker.id:
@@ -139,7 +144,7 @@ class Markers:
                 marker.color.a = 0.6
                 break
 
-    def MakeCone(self,Target):
+    def MakeMarkers(self,Target, marker_list, colormarker):
 
         cone = Marker(ns="Cone", id=Target.id, type=Marker.LINE_LIST, action=Marker.ADD)
         cone.header.frame_id = "base_link"
@@ -154,9 +159,10 @@ class Markers:
         cone.points.append(Target.tangentpoint2)
         cone.points.append(Target.apex_point)
 
-        return cone
+        self.update(cone, marker_list)
+        self.colorupdate(cone, colormarker)
 
-    def MakeCircle(self,Target):
+
         center_point = Target.centroid
         diameter = Target.vcdiameter
         circle = Marker(ns = "Circle", id=Target.id, type=Marker.CYLINDER, action=Marker.ADD)
@@ -171,29 +177,34 @@ class Markers:
         circle.scale.z = 0.01
         circle.pose = center_point
 
-        return circle
+        self.update(circle, marker_list)
+        self.colorupdate(circle, colormarker)
+
 
 
 class VO:
     def __init__(self):
+        self.count = 0
+        self.timesum = 0
 
         self.cardiameter=1.5
         self.marker_list = MarkerArray()
-        self.Markers = Markers()
+        self.markers = Markers()
 
         rospy.Subscriber("targets_markers", MarkerArray, self.getColorMarker)
         rospy.Subscriber("targets", TargetList, self.getDataCallback)
-        self.publisher_marker = rospy.Publisher('/cone', MarkerArray, queue_size=10)
+        self.publisher_marker = rospy.Publisher('/cone', MarkerArray, queue_size=1)
         self.publisher_collision = rospy.Publisher('/collision', CollisionList, queue_size=10)
 
 
     def MakeCollisionTopic(self,target):
-        self.collision = Collision()
-        self.collision.header.stamp = rospy.Time.now()
-        self.collision.target = target.id
-        self.collision.colliding = target.collision
+        self.collisiontopic = Collision()
+        self.collisiontopic.header.stamp = rospy.Time.now()
+        self.collisiontopic.target = target.id
+        self.collisiontopic.colliding = target.collision
+        self.collisiontopic.timetocollision = target.timetocollision
 
-
+        self.collisionlist.collisions.append(self.collisiontopic)
 
     def ColisionCheck(self,target):
 
@@ -203,7 +214,12 @@ class VO:
         # print("tg2: " + str(target.tangent2car_angle2))
         if velocity_angle < target.tangent2car_angle and velocity_angle > target.tangent2car_angle2:
             target.collision = True
-            # print("Target: " + str(target.id) + " colliding")
+            distancetotarget = target.minimumdistance
+            velocitymodule = numpy.sqrt(pow(target.velocity.linear.x,2)+pow(target.velocity.linear.y,2)+pow(target.velocity.linear.z,2))
+            target.timetocollision = distancetotarget/velocitymodule
+            # print("Target: " + str(target.id) + " colliding in:"+str(target.timetocollision))
+            self.MakeCollisionTopic(target)
+            # print("Target: " + str(target.id) +" velocity: " + str(velocitymodule))
 
 
     def getColorMarker(self,msg):
@@ -213,29 +229,35 @@ class VO:
 
 
     def getDataCallback(self, msg):
-        # timestart = time.time()
-        collisionlist = CollisionList()
+        timestart = time.time()
+        self.collisionlist = CollisionList()
         targetIDlist=[]
-        targets = []
+        count = 0
+        maxtimetarget = 0
         for i in msg.Targets:
+            timetarget = time.time()
+            count = count +1
             target = Target(i,self.cardiameter)
-            targets.append(target)
-            targetIDlist.append(target.id)
-            cone = self.Markers.MakeCone(target)
-            circle = self.Markers.MakeCircle(target)
-
-            self.Markers.update(cone, self.marker_list)
-            self.Markers.update(circle,self.marker_list)
-            # self.Markers.colorupdate(circle,self.colormarker)
-            # self.Markers.colorupdate(cone, self.colormarker)
             self.ColisionCheck(target)
-            self.MakeCollisionTopic(target)
-            collisionlist.collisions.append(self.collision)
 
-        self.Markers.clean(self.marker_list, targetIDlist)
+            if target.collision == True and target.timetocollision < 10.0:
+                targetIDlist.append(target.id)
+                self.markers.MakeMarkers(target,self.marker_list,self.colormarker)
+                # elapsedtimetarget = time.time() - timetarget
+                # if elapsedtimetarget > maxtimetarget:
+                #     maxtimetarget = elapsedtimetarget
+
+
+        self.markers.clean(self.marker_list, targetIDlist)
         self.publisher_marker.publish(self.marker_list)
-        self.publisher_collision.publish(collisionlist)
-        # print(str(time.time()-timestart))
+        self.publisher_collision.publish(self.collisionlist)
+
+        elapsedtime = time.time()-timestart
+        self.timesum = self.timesum + elapsedtime
+        self.count = self.count + 1
+        # print("mean= " + str(self.timesum/self.count))
+        # print("no targets: " + str(count) + " time: " + str(elapsedtime))
+        # print("max time target: " + str(maxtimetarget))
 
 if __name__ == '__main__':
     rospy.init_node('vo', anonymous=False)
