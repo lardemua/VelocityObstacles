@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot name="atlascar">
+  <link name="base_link"/>
+  <link name="base_footprint"/>
+  <link name="model">
+    <visual>
+      <origin xyz="-0.9 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://atlascar2_description/meshes/mitsubishi_miev.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="base_link_to_base_footprint" type="fixed">
+    <origin xyz="0.0 0.0 -0.305" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+  </joint>
+  <joint name="base_footprint_to_model" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.57079632679"/>
+    <parent link="base_footprint"/>
+    <child link="model"/>
+  </joint>
+</robot>

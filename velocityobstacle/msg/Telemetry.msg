@@ -1,0 +1,8 @@
+Header header
+string Direction
+float64 OuterWheelAngle
+float64 InnerWheelAngle
+float64 CenterAngle
+geometry_msgs/Twist Velocity
+geometry_msgs/Point TurningCenterPoint
+float64 TurningCenterDistance
