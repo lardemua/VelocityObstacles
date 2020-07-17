@@ -5,7 +5,7 @@ import time
 import rospy
 import numpy
 import tf
-from geometry_msgs.msg import Point, PointStamped, PoseStamped, Vector3Stamped
+from geometry_msgs.msg import Point, PointStamped, PoseStamped, Vector3Stamped, Vector3
 from mtt.msg import TargetList
 from velocityobstacle.msg import Collision, CollisionList, Telemetry
 from visualization_msgs.msg import Marker, MarkerArray
@@ -112,13 +112,14 @@ class Target:
         self.id = alvo.id
 
         self.collision = False
-        self.timetocollision = None
+        self.timetocollision = 0
 
         self.velocity = alvo.velocity
+        self.velocitymodulus=numpy.sqrt(pow(self.velocity.linear.x,2)+pow(self.velocity.linear.y,2))*3.6
         self.centroid = alvo.pose
         self.firstpoint = alvo.initialpose
         self.lastpoint = alvo.finalpose
-        self.minimumdistance = alvo.minimumdistance
+        self.distance = numpy.sqrt(pow(self.centroid.position.x,2)+pow(self.centroid.position.y,2))
 
         self.CalculateTransformedPoints()
 
@@ -127,7 +128,8 @@ class Target:
         self.vcdiameter = cardiameter+self.targetdiameter
 
         self.CalculateTangentPoints()
-        # print("target: " +str(self.id) + " distance: " + str(numpy.sqrt(pow(self.centroid.position.x,2)+pow(self.centroid.position.y,2))) + " velocity: " + str(numpy.sqrt(pow(self.velocity.linear.x,2)+pow(self.velocity.linear.y,2))*3.6))
+
+        # print("target: " +str(self.id) + " distance: " + str(self.distance) + " velocity: " + str(numpy.sqrt(pow(self.velocity.linear.x,2)+pow(self.velocity.linear.y,2))*3.6))
 
 
 class Markers:
@@ -234,6 +236,8 @@ class VO:
         self.collisiontopic.timetocollision = target.timetocollision
         self.collisiontopic.targetcentroid = target.centroid
         self.collisiontopic.targetvelocity = target.velocity
+        self.collisiontopic.minimumdistance = target.distance
+        self.collisiontopic.velocitymodulus = target.velocitymodulus
 
         self.collisionlist.collisions.append(self.collisiontopic)
 
@@ -242,23 +246,21 @@ class VO:
         velocity_angle = numpy.arctan2(-target.velocity.linear.y,-target.velocity.linear.x)
 
         if velocity_angle < target.tangentline1 and velocity_angle > target.tangentline2:
-
+            target.collision = True
+            target.timetocollision = target.distance/target.velocitymodulus
+        else:
+            target.collision = False
+            target.timetocollision = 0
             # print("id" + str(target.id) + " vangle: " + str(velocity_angle) + " velocity: " + str(-target.velocity.linear.x) + " " + str(-target.velocity.linear.y))
             # print("tg1: " + str(target.tangentline1))
             # print("tg2: " + str(target.tangentline2))
-            target.collision = True
-            distancetotarget = target.minimumdistance
-            velocitymodule = numpy.sqrt(pow(target.velocity.linear.x,2)+pow(target.velocity.linear.y,2)+pow(target.velocity.linear.z,2))
-            target.timetocollision = distancetotarget/velocitymodule
             # print("Target: " + str(target.id) + " colliding in:"+str(target.timetocollision))
-            self.MakeCollisionTopic(target)
             # print("Target: " + str(target.id) +" velocity: " + str(velocitymodule))
 
     def Egomotion(self,msg):
         self.gottelemetry=True
         self.heading = msg.Direction
         self.atlasvelocity=msg.Velocity
-        print("lol")
 
 
     def getColorMarker(self,msg):
@@ -268,12 +270,8 @@ class VO:
 
 
     def getDataCallback(self, msg):
-
-        # timestart = time.time()
-        self.collisionlist = CollisionList()
-        # maxtimetarget = 0
         count=0
-        print("loalda")
+        self.collisionlist = CollisionList()
 
 
 
@@ -281,35 +279,21 @@ class VO:
             if self.gottelemetry==True and self.heading != "forward":
                 break
 
-            timetarget = time.time()
-
             target = Target(i,self.cardiameter,count)
             count=target.cnt
             self.ColisionCheck(target)
-
+            self.MakeCollisionTopic(target)
 
             markers = self.markers.MakeMarkers(target, self.colormarker)
 
-
             if target.collision == True and target.timetocollision < 10.0:
-                # elapsedtimetarget = time.time() - timetarget
-                # if elapsedtimetarget > maxtimetarget:
-                #     maxtimetarget = elapsedtimetarget
                 self.publisher_marker.publish(markers)
 
 
         self.publisher_collision.publish(self.collisionlist)
 
-        # elapsedtime = time.time()-timestart
-        # self.timesum = self.timesum + elapsedtime
-
-        # print("mean= " + str(self.timesum/self.count))
-        # print("no targets: " + str(count) + " time: " + str(elapsedtime))
-        # print("max time target: " + str(maxtimetarget))
-        # print("elapsed time: " + str(1/elapsedtime))
 
 if __name__ == '__main__':
-
     rospy.init_node('vo', anonymous=False)
     print("Velocity Obstacle running")
     VO()
